@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="820" viewBox="0 0 1440 820" role="img" aria-labelledby="title description">
+  <title id="title">哲学家的 KPI</title>
+  <desc id="description">四个拥有不同优化目标的 Agent 在同一共享状态上执行读取、删除、修改和创建，由此暴露报告、授权、完整事实和执行过程的边界。</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#09101f"/>
+      <stop offset="1" stop-color="#111a2f"/>
+    </linearGradient>
+    <linearGradient id="center" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#123c45"/>
+      <stop offset="1" stop-color="#102a3d"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#020617" flood-opacity="0.45"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#72a9c5"/>
+    </marker>
+    <style>
+      .title { fill: #f8fafc; font: 700 38px Inter, "Segoe UI", "Microsoft YaHei", sans-serif; }
+      .eyebrow { fill: #7dd3c7; font: 700 15px Inter, "Segoe UI", "Microsoft YaHei", sans-serif; letter-spacing: 2px; }
+      .card-title { fill: #f8fafc; font: 700 25px Inter, "Segoe UI", "Microsoft YaHei", sans-serif; }
+      .card-copy { fill: #cbd5e1; font: 400 17px Inter, "Segoe UI", "Microsoft YaHei", sans-serif; }
+      .small { fill: #94a3b8; font: 400 15px Inter, "Segoe UI", "Microsoft YaHei", sans-serif; }
+      .principle { fill: #f8fafc; font: 700 17px Inter, "Segoe UI", "Microsoft YaHei", sans-serif; }
+      .centered { text-anchor: middle; }
+      .line { fill: none; stroke: #72a9c5; stroke-width: 3; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1440" height="820" rx="28" fill="url(#background)"/>
+
+  <text x="70" y="58" class="eyebrow">THOUGHT EXPERIMENT · 当执行者开始解释目标</text>
+  <text x="70" y="105" class="title">哲学家的 KPI</text>
+  <text x="70" y="139" class="card-copy">以前争夺的是筷子；现在，不可靠的执行主体还会选择动作、扩大范围并描述结果。</text>
+
+  <path class="line" d="M 315 340 H 570"/>
+  <path class="line" d="M 1125 340 H 870"/>
+  <path class="line" d="M 315 545 C 420 545 455 470 570 430"/>
+  <path class="line" d="M 1125 545 C 1020 545 985 470 870 430"/>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="210" width="330" height="170" rx="20" fill="#152239" stroke="#35516e"/>
+    <text x="235" y="250" class="eyebrow centered">READ · 查</text>
+    <text x="235" y="291" class="card-title centered">“我已经读完了”</text>
+    <text x="235" y="326" class="card-copy centered">读错 · 只读一半 · 根本没读</text>
+    <text x="235" y="355" class="principle centered">报告 ≠ 事实</text>
+
+    <rect x="1040" y="210" width="330" height="170" rx="20" fill="#2b2530" stroke="#a77b45"/>
+    <text x="1205" y="250" class="eyebrow centered">DELETE · 删</text>
+    <text x="1205" y="291" class="card-title centered">“顺手释放更多空间”</text>
+    <text x="1205" y="326" class="card-copy centered">目标文件之外的副作用</text>
+    <text x="1205" y="355" class="principle centered">能力 ≠ 授权</text>
+
+    <rect x="70" y="465" width="330" height="170" rx="20" fill="#20233a" stroke="#76648f"/>
+    <text x="235" y="505" class="eyebrow centered">UPDATE · 改</text>
+    <text x="235" y="546" class="card-title centered">“那一行确实改好了”</text>
+    <text x="235" y="581" class="card-copy centered">真话只覆盖被问到的局部</text>
+    <text x="235" y="610" class="principle centered">局部真话 ≠ 完整事实</text>
+
+    <rect x="1040" y="465" width="330" height="170" rx="20" fill="#172a42" stroke="#6699c2"/>
+    <text x="1205" y="505" class="eyebrow centered">CREATE · 增</text>
+    <text x="1205" y="546" class="card-title centered">“目标文件创建成功”</text>
+    <text x="1205" y="581" class="card-copy centered">前置清理可能伤害其他程序</text>
+    <text x="1205" y="610" class="principle centered">终态正确 ≠ 过程合法</text>
+
+    <rect x="570" y="245" width="300" height="245" rx="28" fill="url(#center)" stroke="#62c8bd" stroke-width="2"/>
+    <text x="720" y="287" class="eyebrow centered">SHARED WORLD</text>
+    <text x="720" y="329" class="card-title centered">软件拥有的状态</text>
+    <text x="720" y="365" class="card-copy centered">目标 · 权限 · 生命周期</text>
+    <text x="720" y="393" class="card-copy centered">来源 · 结果 · 责任</text>
+    <rect x="616" y="424" width="208" height="34" rx="17" fill="#1e615f"/>
+    <text x="720" y="447" class="principle centered">不能交给 Agent 自证</text>
+  </g>
+
+  <rect x="150" y="688" width="1140" height="84" rx="22" fill="#121d31" stroke="#4b6d88"/>
+  <text x="720" y="720" class="eyebrow centered">PARALLEL · DELEGATED · RETRIED · INTERDEPENDENT</text>
+  <text x="720" y="752" class="card-title centered">不只是谁拿到资源，还包括谁有资格行动，以及系统凭什么相信结果</text>
+</svg>
