@@ -37,7 +37,7 @@ const mappedRepositories = [
 ];
 const mappedRepositoryCount = mappedRepositories.length + 1; // Includes this profile repository.
 const expectedInitialSource = "3fddab9d64401a93b6ec9be7175c5b0d2c3d9102";
-const expectedEditionRevision = "zh-profile-v1-r1";
+const expectedEditionRevision = "zh-profile-v1-r2";
 
 function fail(message) {
   failures.push(message);
@@ -78,7 +78,10 @@ if (edition) {
     fail("EDITION.json: canonical English route is missing");
   }
   if (edition.lastSynchronized !== "2026-10-04") {
-    fail("EDITION.json: lastSynchronized must be 2026-10-04 for the initial edition");
+    fail("EDITION.json: lastSynchronized must retain the exact source-sync date");
+  }
+  if (edition.editionLastUpdated !== "2026-10-04") {
+    fail("EDITION.json: editionLastUpdated must identify the current Chinese revision date");
   }
   if (edition.consistencyModel !== "provenance-bound-eventual-consistency") {
     fail("EDITION.json: unexpected consistency model");
@@ -135,10 +138,12 @@ for (const relative of requiredFiles.filter((file) => file.endsWith(".pdf"))) {
 const readme = fs.readFileSync(path.join(root, "README.md"), "utf8").replace(/\r\n/g, "\n");
 for (const editionMarker of [
   "**中文版本状态**",
-  "zh-profile-v1-r1",
+  "zh-profile-v1-r2",
   "2026-10-04",
   "https://github.com/NoctilumeDev/NoctilumeDev/tree/3fddab9d64401a93b6ec9be7175c5b0d2c3d9102",
   "[English Edition](https://github.com/NoctilumeDev)",
+  "现在由 **[EngineeringGallery](https://github.com/NoctilumeDev/EngineeringGallery)** 承担面向使用者的干净发行展示面",
+  "取得 Gallery 发行资格后的产品坐标",
 ]) {
   if (!readme.includes(editionMarker)) {
     fail(`README.md: missing Chinese-edition marker ${editionMarker}`);

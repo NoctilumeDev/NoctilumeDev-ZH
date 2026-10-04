@@ -2,9 +2,10 @@
 
 > **中文版本状态**
 >
-> - 初始内容来源：[`NoctilumeDev@3fddab9`](https://github.com/NoctilumeDev/NoctilumeDev/tree/3fddab9d64401a93b6ec9be7175c5b0d2c3d9102)
-> - Edition revision：`zh-profile-v1-r1`
-> - Last synchronized：`2026-10-04`
+> - 内容基线（G3A 拆分前的混合主页）：[`NoctilumeDev@3fddab9`](https://github.com/NoctilumeDev/NoctilumeDev/tree/3fddab9d64401a93b6ec9be7175c5b0d2c3d9102)
+> - Edition revision：`zh-profile-v1-r2`
+> - Source synchronized：`2026-10-04`
+> - Edition updated：`2026-10-04`
 > - 当前英文主页：[English Edition](https://github.com/NoctilumeDev)
 >
 > 中文版是带来源坐标、独立修订的语言派生视图；允许晚于英文版更新，但不会把旧内容伪装成已经同步到新的英文 revision。
@@ -203,14 +204,14 @@ Detailed architecture decisions, test evidence, and release artifacts live in ea
 
 这些公开仓库目前是实验室本体：源码、施工过程、失败记录与证据档案共同留在现场。它们不需要为了目录整齐而反复抹平历史；现在只守三条——**主线不漂、入口不骗人、关键证据不丢**，其余施工痕迹可以保留。
 
-等各试验台完成自己的阶段收口并进入正式分发期，可以另建一个面向使用者的干净总仓库：以子目录收纳各项目，只保留源码、README、必要文档与脚本、运行资产和最小代表性证据。这个总仓库是方便获取与使用的**发行投影**，不是对历史本体的重写；原仓库继续作为设计来路、失败记录和证据的权威档案。
+现在由 **[EngineeringGallery](https://github.com/NoctilumeDev/EngineeringGallery)** 承担面向使用者的干净发行展示面。某个试验台完成自己的阶段收口并独立取得 Gallery 发行资格后，才会以普通子目录进入其中，只保留源码、README、必要文档与脚本、运行资产和最小代表性证据。Gallery 保存的是方便理解、获取与运行的**发行投影**，不是对历史本体的重写；原仓库继续作为设计来路、失败记录和证据的权威档案。
 
 ```text
 当前实验室坐标
 milestone / baseline / frozen / qualification
 → 说明这个研究阶段究竟证明了什么
 
-未来产品坐标
+取得 Gallery 发行资格后的产品坐标
 v1.0.0 / v1.1.0 / v1.1.1
 → 说明现在能做什么，以及相对上一版改变了什么
 ```
