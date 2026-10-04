@@ -15,6 +15,7 @@ const requiredFiles = [
   "docs/fresh-checkout-independent-audit.md",
   "docs/ai-cognitive-feedback-loop.md",
   "docs/engineering-judgment.md",
+  "docs/engineering-judgment-interview.md",
   "docs/adversarial-engineering-validation.md",
   "docs/adversarial-engineering-validation.pdf",
   "docs/protecting-zero.md",
