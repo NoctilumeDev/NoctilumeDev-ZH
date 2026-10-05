@@ -3,9 +3,9 @@
 > **中文版本状态**
 >
 > - 内容基线（G3A 拆分前的混合主页）：[`NoctilumeDev@3fddab9`](https://github.com/NoctilumeDev/NoctilumeDev/tree/3fddab9d64401a93b6ec9be7175c5b0d2c3d9102)
-> - Edition revision：`zh-profile-v1-r2`
+> - Edition revision：`zh-profile-v1-r3`
 > - Source synchronized：`2026-10-04`
-> - Edition updated：`2026-10-04`
+> - Edition updated：`2026-10-05`
 > - 当前英文主页：[English Edition](https://github.com/NoctilumeDev)
 >
 > 中文版是带来源坐标、独立修订的语言派生视图；允许晚于英文版更新，但不会把旧内容伪装成已经同步到新的英文 revision。
@@ -267,8 +267,11 @@ v1.0.0 / v1.1.0 / v1.1.1
 
 ## Essays / 工程复盘与方法论
 
-这些文章分别讨论工程取舍、能力生产、事实资格、验收方法，以及 AI 进入人的认知反馈回路以后怎样接受选择与治理。它们来自同一段连续实践，但不互相代替：
+这些文章分别讨论工程取舍、决策认识、能力生产、事实资格、验收方法，以及 AI 进入人的认知反馈回路以后怎样接受选择与治理。它们来自同一段连续实践，但不互相代替：
 
+- **[决策认识论](docs/decision-epistemology.md)**
+  - **它问：** 当现实无法被完整认识、方法只能提供局部投影时，人怎样形成足以行动的方向感，并让错误仍然可以被发现、停止和撤回？
+  - **状态：** `工程判断与行动认识论 · 长文初稿`，不是万能决策公式。
 - **[AI 的上限，不在答案里](docs/ai-cognitive-feedback-loop.md)**
   - **它问：** 当 AI 从任务工具进入人的认知反馈回路，什么机制负责生成变化、有效选择、保留经验并约束权力？
   - **状态：** `认知系统治理 · 长文初稿`，三轴观察模型，不作成熟度排名。
@@ -284,7 +287,7 @@ v1.0.0 / v1.1.0 / v1.1.1
 - **[何为工程判断力](docs/engineering-judgment.md)**
 - **[工程判断力](docs/engineering-judgment-interview.md)**
 
-这些文章从不同方向记录认知耦合、能力生产、事实资格、验收方法与工程取舍。它们不是学术论文，也不把单一使用者的纵向案例包装成普遍规律。
+这些文章从不同方向记录决策认识、认知耦合、能力生产、事实资格、验收方法与工程取舍。它们不是学术论文，也不把单一使用者的纵向案例包装成普遍规律。
 
 需要网页内概念检索或沿链接复核时，可使用两份配套导读：[《保护零》导读](docs/protecting-zero.md)与[《对抗性工程验收》导读](docs/adversarial-engineering-validation.md)。导读不是 PDF 正文的缩写替代品。
 
