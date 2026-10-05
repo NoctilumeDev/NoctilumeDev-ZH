@@ -14,6 +14,7 @@ const requiredFiles = [
   "docs/public-verification-loop.md",
   "docs/fresh-checkout-independent-audit.md",
   "docs/ai-cognitive-feedback-loop.md",
+  "docs/decision-epistemology.md",
   "docs/engineering-judgment.md",
   "docs/engineering-judgment-interview.md",
   "docs/adversarial-engineering-validation.md",
@@ -37,7 +38,7 @@ const mappedRepositories = [
 ];
 const mappedRepositoryCount = mappedRepositories.length + 1; // Includes this profile repository.
 const expectedInitialSource = "3fddab9d64401a93b6ec9be7175c5b0d2c3d9102";
-const expectedEditionRevision = "zh-profile-v1-r2";
+const expectedEditionRevision = "zh-profile-v1-r3";
 
 function fail(message) {
   failures.push(message);
@@ -80,7 +81,7 @@ if (edition) {
   if (edition.lastSynchronized !== "2026-10-04") {
     fail("EDITION.json: lastSynchronized must retain the exact source-sync date");
   }
-  if (edition.editionLastUpdated !== "2026-10-04") {
+  if (edition.editionLastUpdated !== "2026-10-05") {
     fail("EDITION.json: editionLastUpdated must identify the current Chinese revision date");
   }
   if (edition.consistencyModel !== "provenance-bound-eventual-consistency") {
@@ -138,8 +139,8 @@ for (const relative of requiredFiles.filter((file) => file.endsWith(".pdf"))) {
 const readme = fs.readFileSync(path.join(root, "README.md"), "utf8").replace(/\r\n/g, "\n");
 for (const editionMarker of [
   "**中文版本状态**",
-  "zh-profile-v1-r2",
-  "2026-10-04",
+  "zh-profile-v1-r3",
+  "2026-10-05",
   "https://github.com/NoctilumeDev/NoctilumeDev/tree/3fddab9d64401a93b6ec9be7175c5b0d2c3d9102",
   "[English Edition](https://github.com/NoctilumeDev)",
   "现在由 **[EngineeringGallery](https://github.com/NoctilumeDev/EngineeringGallery)** 承担面向使用者的干净发行展示面",
@@ -269,12 +270,29 @@ if (readme.includes("/releases/tag/")) {
   fail("README.md: duplicated release tag coordinate; keep exact versions in project repositories");
 }
 for (const article of [
+  "docs/decision-epistemology.md",
   "docs/ai-cognitive-feedback-loop.md",
   "docs/from-tool-gain-to-collaborative-compounding.pdf",
   "docs/protecting-zero-from-answer-to-fact.pdf",
   "docs/adversarial-engineering-validation.pdf",
 ]) {
   if (!readme.includes(article)) fail(`README.md: missing essay entry ${article}`);
+}
+
+const decisionEpistemology = fs.readFileSync(
+  path.join(root, "docs/decision-epistemology.md"),
+  "utf8",
+);
+for (const invariant of [
+  "七种投影不是七个因子",
+  "方向感不是答案",
+  "决策是对现实的一次承诺",
+  "好的决策不给错误无限权力",
+  "纸上的价值，是让下一次撞墙不再完全相同",
+]) {
+  if (!decisionEpistemology.includes(invariant)) {
+    fail(`decision epistemology: missing essay invariant ${invariant}`);
+  }
 }
 
 const audit = fs.readFileSync(path.join(root, "docs/fresh-checkout-independent-audit.md"), "utf8");
