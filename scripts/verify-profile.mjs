@@ -38,7 +38,7 @@ const mappedRepositories = [
 ];
 const mappedRepositoryCount = mappedRepositories.length + 1; // Includes this profile repository.
 const expectedInitialSource = "3fddab9d64401a93b6ec9be7175c5b0d2c3d9102";
-const expectedEditionRevision = "zh-profile-v1-r3";
+const expectedEditionRevision = "zh-profile-v1-r4";
 
 function fail(message) {
   failures.push(message);
@@ -139,7 +139,7 @@ for (const relative of requiredFiles.filter((file) => file.endsWith(".pdf"))) {
 const readme = fs.readFileSync(path.join(root, "README.md"), "utf8").replace(/\r\n/g, "\n");
 for (const editionMarker of [
   "**中文版本状态**",
-  "zh-profile-v1-r3",
+  "zh-profile-v1-r4",
   "2026-10-05",
   "https://github.com/NoctilumeDev/NoctilumeDev/tree/3fddab9d64401a93b6ec9be7175c5b0d2c3d9102",
   "[English Edition](https://github.com/NoctilumeDev)",
@@ -284,10 +284,10 @@ const decisionEpistemology = fs.readFileSync(
   "utf8",
 );
 for (const invariant of [
-  "七种投影不是七个因子",
+  "更像是七种对同一个黑暗世界的投影",
   "方向感不是答案",
-  "决策是对现实的一次承诺",
-  "好的决策不给错误无限权力",
+  "决策并不是第八种思维方式",
+  "好的决策，从来不是找到一个不会错的方法，而是不给错误无限权力",
   "纸上的价值，是让下一次撞墙不再完全相同",
 ]) {
   if (!decisionEpistemology.includes(invariant)) {
