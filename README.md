@@ -3,7 +3,7 @@
 > **中文版本状态**
 >
 > - 内容基线（G3A 拆分前的混合主页）：[`NoctilumeDev@3fddab9`](https://github.com/NoctilumeDev/NoctilumeDev/tree/3fddab9d64401a93b6ec9be7175c5b0d2c3d9102)
-> - Edition revision：`zh-profile-v1-r3`
+> - Edition revision：`zh-profile-v1-r4`
 > - Source synchronized：`2026-10-04`
 > - Edition updated：`2026-10-05`
 > - 当前英文主页：[English Edition](https://github.com/NoctilumeDev)

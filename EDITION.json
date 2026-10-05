@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "language": "zh-CN",
-  "editionRevision": "zh-profile-v1-r3",
+  "editionRevision": "zh-profile-v1-r4",
   "initialContentSource": {
     "repository": "https://github.com/NoctilumeDev/NoctilumeDev",
     "commit": "3fddab9d64401a93b6ec9be7175c5b0d2c3d9102"
