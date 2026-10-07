@@ -3,7 +3,7 @@
 > **中文版本状态**
 >
 > - 内容基线（G3A 拆分前的混合主页）：[`NoctilumeDev@3fddab9`](https://github.com/NoctilumeDev/NoctilumeDev/tree/3fddab9d64401a93b6ec9be7175c5b0d2c3d9102)
-> - Edition revision：`zh-profile-v1-r5`
+> - Edition revision：`zh-profile-v1-r6`
 > - Source synchronized：`2026-10-04`
 > - Edition updated：`2026-10-08`
 > - 当前英文主页：[English Edition](https://github.com/NoctilumeDev)
@@ -275,7 +275,7 @@ v1.0.0 / v1.1.0 / v1.1.1
 - **[AI 的上限，不在答案里](docs/ai-cognitive-feedback-loop.md)**
   - **它问：** 当 AI 从任务工具进入人的认知反馈回路，什么机制负责生成变化、有效选择、保留经验并约束权力？
   - **状态：** `认知系统治理 · 长文初稿`，三轴观察模型，不作成熟度排名。
-- **[当 AI 接入系统以后](docs/when-ai-enters-the-system.md)**
+- **[当 AI 接入系统之后](docs/when-ai-enters-the-system.md)**
   - **它问：** 当权限、数据与事实边界都守住以后，模型理解、本地规则和错误兜底为什么仍可能共同把产品带到错误答案？
   - **状态：** `AI 系统接入复盘 · 控制变量案例`，记录一轮有边界的真实观察，不把样本数字外推成普遍结论。
 - **[从工具增益到协同复利](docs/from-tool-gain-to-collaborative-compounding.pdf)**
