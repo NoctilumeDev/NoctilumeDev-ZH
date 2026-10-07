@@ -39,7 +39,7 @@ const mappedRepositories = [
 ];
 const mappedRepositoryCount = mappedRepositories.length + 1; // Includes this profile repository.
 const expectedInitialSource = "3fddab9d64401a93b6ec9be7175c5b0d2c3d9102";
-const expectedEditionRevision = "zh-profile-v1-r5";
+const expectedEditionRevision = "zh-profile-v1-r6";
 
 function fail(message) {
   failures.push(message);
@@ -140,7 +140,7 @@ for (const relative of requiredFiles.filter((file) => file.endsWith(".pdf"))) {
 const readme = fs.readFileSync(path.join(root, "README.md"), "utf8").replace(/\r\n/g, "\n");
 for (const editionMarker of [
   "**中文版本状态**",
-  "zh-profile-v1-r5",
+  "zh-profile-v1-r6",
   "2026-10-08",
   "https://github.com/NoctilumeDev/NoctilumeDev/tree/3fddab9d64401a93b6ec9be7175c5b0d2c3d9102",
   "[English Edition](https://github.com/NoctilumeDev)",
@@ -302,8 +302,8 @@ const whenAiEntersTheSystem = fs.readFileSync(
   "utf8",
 );
 for (const invariant of [
-  "# 当 AI 接入系统以后",
-  "四道门禁守住了安全，产品为什么仍然答错？",
+  "# 当 AI 接入系统之后",
+  "防住了大模型删库跑路，却被一句普通的话打出了问题",
   "后来，我们真的把这张控制变量表扩到了 133 道题",
   "模型变聪明了，系统没有跟着变聪明",
   "“没出事故”不等于“做对了事情”",
