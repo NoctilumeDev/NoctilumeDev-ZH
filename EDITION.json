@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "language": "zh-CN",
-  "editionRevision": "zh-profile-v1-r4",
+  "editionRevision": "zh-profile-v1-r5",
   "initialContentSource": {
     "repository": "https://github.com/NoctilumeDev/NoctilumeDev",
     "commit": "3fddab9d64401a93b6ec9be7175c5b0d2c3d9102"
   },
   "canonicalEnglishProfile": "https://github.com/NoctilumeDev",
   "lastSynchronized": "2026-10-04",
-  "editionLastUpdated": "2026-10-05",
+  "editionLastUpdated": "2026-10-08",
   "consistencyModel": "provenance-bound-eventual-consistency"
 }

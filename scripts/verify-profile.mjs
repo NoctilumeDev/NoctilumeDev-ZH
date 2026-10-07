@@ -15,6 +15,7 @@ const requiredFiles = [
   "docs/fresh-checkout-independent-audit.md",
   "docs/ai-cognitive-feedback-loop.md",
   "docs/decision-epistemology.md",
+  "docs/when-ai-enters-the-system.md",
   "docs/engineering-judgment.md",
   "docs/engineering-judgment-interview.md",
   "docs/adversarial-engineering-validation.md",
@@ -38,7 +39,7 @@ const mappedRepositories = [
 ];
 const mappedRepositoryCount = mappedRepositories.length + 1; // Includes this profile repository.
 const expectedInitialSource = "3fddab9d64401a93b6ec9be7175c5b0d2c3d9102";
-const expectedEditionRevision = "zh-profile-v1-r4";
+const expectedEditionRevision = "zh-profile-v1-r5";
 
 function fail(message) {
   failures.push(message);
@@ -81,7 +82,7 @@ if (edition) {
   if (edition.lastSynchronized !== "2026-10-04") {
     fail("EDITION.json: lastSynchronized must retain the exact source-sync date");
   }
-  if (edition.editionLastUpdated !== "2026-10-05") {
+  if (edition.editionLastUpdated !== "2026-10-08") {
     fail("EDITION.json: editionLastUpdated must identify the current Chinese revision date");
   }
   if (edition.consistencyModel !== "provenance-bound-eventual-consistency") {
@@ -139,8 +140,8 @@ for (const relative of requiredFiles.filter((file) => file.endsWith(".pdf"))) {
 const readme = fs.readFileSync(path.join(root, "README.md"), "utf8").replace(/\r\n/g, "\n");
 for (const editionMarker of [
   "**中文版本状态**",
-  "zh-profile-v1-r4",
-  "2026-10-05",
+  "zh-profile-v1-r5",
+  "2026-10-08",
   "https://github.com/NoctilumeDev/NoctilumeDev/tree/3fddab9d64401a93b6ec9be7175c5b0d2c3d9102",
   "[English Edition](https://github.com/NoctilumeDev)",
   "现在由 **[EngineeringGallery](https://github.com/NoctilumeDev/EngineeringGallery)** 承担面向使用者的干净发行展示面",
@@ -272,6 +273,7 @@ if (readme.includes("/releases/tag/")) {
 for (const article of [
   "docs/decision-epistemology.md",
   "docs/ai-cognitive-feedback-loop.md",
+  "docs/when-ai-enters-the-system.md",
   "docs/from-tool-gain-to-collaborative-compounding.pdf",
   "docs/protecting-zero-from-answer-to-fact.pdf",
   "docs/adversarial-engineering-validation.pdf",
@@ -292,6 +294,23 @@ for (const invariant of [
 ]) {
   if (!decisionEpistemology.includes(invariant)) {
     fail(`decision epistemology: missing essay invariant ${invariant}`);
+  }
+}
+
+const whenAiEntersTheSystem = fs.readFileSync(
+  path.join(root, "docs/when-ai-enters-the-system.md"),
+  "utf8",
+);
+for (const invariant of [
+  "# 当 AI 接入系统以后",
+  "四道门禁守住了安全，产品为什么仍然答错？",
+  "后来，我们真的把这张控制变量表扩到了 133 道题",
+  "模型变聪明了，系统没有跟着变聪明",
+  "“没出事故”不等于“做对了事情”",
+  "最开始，只是想接入一个大模型",
+]) {
+  if (!whenAiEntersTheSystem.includes(invariant)) {
+    fail(`when AI enters the system: missing essay invariant ${invariant}`);
   }
 }
 
