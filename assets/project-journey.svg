@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1080" viewBox="0 0 1440 1080" role="img" aria-labelledby="title description">
   <title id="title">NoctilumeDev project journey</title>
-  <desc id="description">From five HTML experiments to DarkRoomLibrary, where Qixu and PlainJournal become separate business branches with distinct fact ownership, then through single-machine limits to three decoupled infrastructure laboratories.</desc>
+  <desc id="description">From five HTML experiments to DarkRoomLibrary, where Qixu and PlainJournal become separate business branches with distinct fact ownership, then through machine limits to four decoupled research lines for evidence, execution, authority, and proxy validity.</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#09101f"/>
@@ -32,18 +32,19 @@
       .status { fill: #f8fafc; font: 700 14px Inter, "Segoe UI", "Microsoft YaHei", sans-serif; letter-spacing: 0.5px; }
       .center { text-anchor: middle; }
       .line { fill: none; stroke: #72a9c5; stroke-width: 3; marker-end: url(#arrow); }
-      .feedback-line { fill: none; stroke: #d5a85b; stroke-width: 3; stroke-dasharray: 10 9; marker-end: url(#arrow-warm); }
+      .stop-line { fill: none; stroke: #d5a85b; stroke-width: 3; stroke-dasharray: 10 9; marker-end: url(#arrow-warm); }
+      .return-line { fill: none; stroke: #e7bd73; stroke-width: 2; stroke-dasharray: 3 10; opacity: 0.86; marker-end: url(#arrow-warm); }
     </style>
   </defs>
 
   <rect width="1440" height="1080" rx="28" fill="url(#background)"/>
 
   <text x="72" y="64" class="eyebrow">PROJECT JOURNEY · 问题怎样一步步长出来</text>
-  <text x="72" y="103" class="title">从页面与业务分叉，到单机边界与三个解耦试验台</text>
+  <text x="72" y="103" class="title">从业务分叉与单机边界，到四条权责分明的研究线</text>
 
   <path class="line" d="M 330 215 H 382"/>
   <path class="line" d="M 650 215 H 702"/>
-  <path class="feedback-line" d="M 970 215 H 1022"/>
+  <path class="stop-line" d="M 970 215 H 1022"/>
 
   <g filter="url(#shadow)">
     <rect x="70" y="145" width="260" height="140" rx="18" fill="#152239" stroke="#35516e"/>
@@ -84,60 +85,73 @@
   </g>
 
   <path class="line" d="M 840 285 V 486"/>
-  <path class="feedback-line" d="M 1200 285 V 486"/>
+  <path class="stop-line" d="M 1200 285 V 486"/>
   <g filter="url(#shadow)">
     <rect x="170" y="495" width="1100" height="105" rx="22" fill="#20233a" stroke="#76648f"/>
     <text x="720" y="526" class="eyebrow center" fill="#c4a7e7">问题被抽象，而不是继续堆功能</text>
-    <text x="720" y="558" class="card-title center">AI 能生成代码，但“写出来、测试通过、事实成立”不是一回事</text>
-    <text x="720" y="584" class="card-copy center">单机容量、失败归因、证据身份与权责边界，需要各自拥有明确答案</text>
+    <text x="720" y="558" class="card-title center">证据、执行、授权与代理有效性，需要由不同责任边界承接</text>
+    <text x="720" y="584" class="card-copy center">四条研究线可以互相启发，但不会因此组成强制技术栈</text>
   </g>
 
-  <text x="72" y="638" class="eyebrow">THREE DECOUPLED LABS · 三个权责独立的试验台</text>
+  <text x="72" y="638" class="eyebrow">FOUR DECOUPLED RESEARCH LINES · 四条责任独立的研究线</text>
   <path class="line" d="M 720 600 V 660"/>
-  <path class="line" d="M 720 660 H 265 V 680"/>
-  <path class="line" d="M 720 660 V 680"/>
-  <path class="line" d="M 720 660 H 1175 V 680"/>
+  <path class="line" d="M 720 660 H 195 V 680"/>
+  <path class="line" d="M 720 660 H 540 V 680"/>
+  <path class="line" d="M 720 660 H 885 V 680"/>
+  <path class="line" d="M 720 660 H 1230 V 680"/>
 
   <g filter="url(#shadow)">
-    <rect x="70" y="680" width="390" height="170" rx="22" fill="url(#veritrail)" stroke="#62c8bd" stroke-width="2"/>
-    <text x="265" y="714" class="eyebrow center">FACT QUALIFICATION</text>
-    <text x="265" y="748" class="card-title center">VeriTrail / 验迹</text>
-    <text x="265" y="780" class="card-copy center">这次运行究竟证明了什么？</text>
-    <text x="265" y="806" class="small center">Evidence · deterministic Verdict</text>
-    <rect x="163" y="817" width="204" height="24" rx="12" fill="#1e615f"/>
-    <text x="265" y="834" class="status center">独立可用 · LOCAL-FIRST</text>
+    <rect x="40" y="680" width="310" height="190" rx="22" fill="url(#veritrail)" stroke="#62c8bd" stroke-width="2"/>
+    <text x="195" y="712" class="eyebrow center" style="font-size:13px">EVIDENCE &amp; VERDICT</text>
+    <text x="195" y="744" class="card-title center">VeriTrail / 验迹</text>
+    <text x="195" y="779" class="card-copy center" style="font-size:15px">这次运行究竟</text>
+    <text x="195" y="802" class="card-copy center" style="font-size:15px">证明了什么？</text>
+    <text x="195" y="825" class="small center" style="font-size:13px">Evidence · integrity · verdict</text>
+    <rect x="91" y="837" width="208" height="24" rx="12" fill="#1e615f"/>
+    <text x="195" y="854" class="status center">独立可用 · LOCAL-FIRST</text>
 
-    <rect x="525" y="680" width="390" height="170" rx="22" fill="#172a42" stroke="#6699c2"/>
-    <text x="720" y="714" class="eyebrow center">EXECUTION OWNERSHIP</text>
-    <text x="720" y="748" class="card-title center">JPyxis</text>
-    <text x="720" y="780" class="card-copy center">谁定义、调用、执行与解释失败？</text>
-    <text x="720" y="806" class="small center">Contract · lifecycle · runtime boundary</text>
-    <rect x="606" y="817" width="228" height="24" rx="12" fill="#254d73"/>
-    <text x="720" y="834" class="status center">单节点基线 · FROZEN</text>
+    <rect x="385" y="680" width="310" height="190" rx="22" fill="#172a42" stroke="#6699c2"/>
+    <text x="540" y="712" class="eyebrow center" style="font-size:13px">COMPUTATION &amp; EXECUTION</text>
+    <text x="540" y="744" class="card-title center">JPyxis</text>
+    <text x="540" y="779" class="card-copy center" style="font-size:15px">谁定义计算，</text>
+    <text x="540" y="802" class="card-copy center" style="font-size:15px">它又怎样执行？</text>
+    <text x="540" y="825" class="small center" style="font-size:13px">Contract · identity · runtime · lifecycle</text>
+    <rect x="426" y="837" width="228" height="24" rx="12" fill="#254d73"/>
+    <text x="540" y="854" class="status center">单节点基线 · FROZEN</text>
 
-    <rect x="980" y="680" width="390" height="170" rx="22" fill="#29293f" stroke="#8b82b6" stroke-dasharray="8 7"/>
-    <text x="1175" y="714" class="eyebrow center">OS-LEVEL TRUST SUBSTRATE</text>
-    <text x="1175" y="748" class="card-title center">FlowKernel / 流核</text>
-    <text x="1175" y="780" class="card-copy center">不可靠策略可以被允许做什么？</text>
-    <text x="1175" y="806" class="small center">Capability · revocation · recovery</text>
-    <rect x="1081" y="817" width="188" height="24" rx="12" fill="#4b466d"/>
-    <text x="1175" y="834" class="status center">研究计划 · PLANNED</text>
+    <rect x="730" y="680" width="310" height="190" rx="22" fill="#29293f" stroke="#8b82b6" stroke-dasharray="8 7"/>
+    <text x="885" y="712" class="eyebrow center" style="font-size:13px">AUTHORITY &amp; RESOURCES</text>
+    <text x="885" y="744" class="card-title center">FlowKernel / 流核</text>
+    <text x="885" y="779" class="card-copy center" style="font-size:15px">行动者凭什么</text>
+    <text x="885" y="802" class="card-copy center" style="font-size:15px">有权行动？</text>
+    <text x="885" y="825" class="small center" style="font-size:13px">Capability · resources · revocation</text>
+    <rect x="791" y="837" width="188" height="24" rx="12" fill="#4b466d"/>
+    <text x="885" y="854" class="status center">研究计划 · PLANNED</text>
+
+    <rect x="1075" y="680" width="310" height="190" rx="22" fill="#302b20" stroke="#d5a85b" stroke-dasharray="8 7"/>
+    <text x="1230" y="712" class="eyebrow center" fill="#e7bd73" style="font-size:12px">OBJECTIVE &amp; PROXY VALIDITY</text>
+    <text x="1230" y="744" class="card-title center" style="font-size:18px">漂移算法 / Drift Algorithm</text>
+    <text x="1230" y="779" class="card-copy center" style="font-size:15px">代理是否仍支持</text>
+    <text x="1230" y="802" class="card-copy center" style="font-size:15px">固定目标？</text>
+    <text x="1230" y="825" class="small center" style="font-size:13px">有界观测 · 反馈</text>
+    <rect x="1135" y="837" width="190" height="24" rx="12" fill="#5a4727"/>
+    <text x="1230" y="854" class="status center" style="font-size:12px">RESEARCH_NOT_STARTED</text>
   </g>
 
-  <path class="line" d="M 265 850 V 877"/>
-  <path class="line" d="M 720 850 V 877"/>
-  <path class="line" d="M 1175 850 V 877"/>
+  <path class="line" d="M 195 870 V 897"/>
+  <path class="line" d="M 540 870 V 897"/>
+  <path class="line" d="M 885 870 V 897"/>
+  <path class="line" d="M 1230 870 V 897"/>
   <g filter="url(#shadow)">
-    <rect x="210" y="885" width="1020" height="112" rx="24" fill="url(#feedback)" stroke="#567594"/>
-    <text x="720" y="914" class="eyebrow center">COMPOSABLE, NOT COLLAPSED · 可组合，但不合并权威</text>
-    <text x="720" y="945" class="card-title center">三块地基可以组成更大的系统；当前边界仍从单机 / 单节点开始</text>
-    <text x="720" y="972" class="card-copy center">资源、部署、恢复与真实负载问题重新出现，素简记的经验因此回到中心</text>
-    <text x="720" y="991" class="small center">这是一条经验反馈环，不是“旧项目失败后被丢弃”</text>
+    <rect x="130" y="905" width="1180" height="92" rx="24" fill="url(#feedback)" stroke="#567594"/>
+    <text x="720" y="928" class="eyebrow center">可选组合 · 版本化制品 · 不共享权威</text>
+    <text x="720" y="957" class="card-title center" style="font-size:20px">人拥有目标与授权；现实拥有真相</text>
+    <text x="720" y="981" class="card-copy center" style="font-size:15px">研究线可以交换来源方拥有的制品，但不会因此组成强制流水线</text>
   </g>
 
-  <path class="feedback-line" d="M 1228 940 C 1390 900 1410 230 1360 175 C 1280 92 1090 104 1000 205"/>
-  <rect x="1050" y="102" width="320" height="34" rx="17" fill="#3d3328" stroke="#a77b45"/>
-  <text x="1210" y="124" class="status center" fill="#e7bd73">回到素简记暴露的单机边界</text>
+  <path class="return-line" d="M 1308 952 C 1390 900 1410 230 1360 175 C 1280 92 1090 104 1000 205"/>
+  <rect x="1010" y="615" width="360" height="34" rx="17" fill="#3d3328" stroke="#a77b45"/>
+  <text x="1190" y="637" class="status center" fill="#e7bd73">回到素简记暴露的单机边界</text>
 
   <rect x="70" y="1018" width="620" height="44" rx="16" fill="#121d31" stroke="#30445f"/>
   <text x="380" y="1046" class="card-copy center">MiniSpringBoot · 框架机制拆解与真实全栈反证样本</text>

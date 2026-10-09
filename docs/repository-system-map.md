@@ -2,14 +2,14 @@
 
 > 状态：`STABLE ROLE MAP · NO NEW IMPLEMENTATION CLAIM`
 >
-> 映射范围：本文覆盖十一个工程体系仓库。[dome](https://github.com/NoctilumeDev/dome) 保存课程作业、独立项目与文字记录，作为历史归档保留在体系图之外，不承担基础设施角色。
+> 映射范围：本文覆盖十二个工程体系仓库。[dome](https://github.com/NoctilumeDev/dome) 保存课程作业、独立项目与文字记录，作为历史归档保留在体系图之外，不承担基础设施角色。
 >
 > 本文只维护仓库之间相对稳定的职责、依赖方向与未来接缝。每个项目的精确里程碑、版本、
 > Release 与证据坐标，仍以该项目仓库自己的 README 和冻结记录为准。
 
 ## 一句话总纲
 
-> **FlowKernel 以操作系统级信任语义限定谁可以在什么能力与资源边界内行动；JPyxis 管理异构计算如何被定义、部署、调用与执行；
+> **漂移算法研究代理指标在有界观测与反馈下是否仍支持固定目标；FlowKernel 未来以操作系统级信任语义限定谁可以在什么能力与资源边界内行动；JPyxis 管理异构计算如何被定义、部署、调用与执行；
 > 来源系统拥有并报告各自事实；Evidence Adapter 负责有界观察与转换；VeriTrail 只裁定封存条件被现有
 > 证据支持到什么程度；Review Attention 提议人应优先检查哪里；人拥有前提、Seal 与最终处置；现实拥有真相。**
 
@@ -18,7 +18,7 @@
 VeriTrail 也不拥有任何来源系统的状态或世界真相，它只依据 sealed Plan、标准 Evidence 与确定性规则
 产生有边界的 `PASS / FAIL / INCONCLUSIVE / PENDING`。
 
-## 十一个被映射的体系仓库不是一棵调用树
+## 十二个被映射的体系仓库不是一棵调用树
 
 | 仓库 | 稳定角色 | 拥有的事实或责任 | 不拥有的责任 |
 | --- | --- | --- | --- |
@@ -26,6 +26,7 @@ VeriTrail 也不拥有任何来源系统的状态或世界真相，它只依据 
 | **[VeriTrail](https://github.com/NoctilumeDev/VeriTrail)** | 证据与确定性裁决底座 | Plan/Evidence 合同、完整性与充分性检查、断言执行、Verdict 推导 | 来源系统状态、世界真相、人的最终处置 |
 | **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** | 合同驱动的异构计算框架 | 计算合同、制品与部署身份、调用生命周期、运行时绑定和执行事实 | 操作系统级 Capability、宿主业务真相、VeriTrail Verdict |
 | **[FlowKernel](https://github.com/NoctilumeDev/FlowKernel)** | 规划中的操作系统级信任与执行基座 | 未来的 Principal、Capability、资源硬边界、特权转换、撤销、恢复与来源记录 | Agent 的正确性、JPyxis 内部状态、外部验收结论；当前也不宣称已有 C-first target 或跨平台 adapter |
+| **[AlgorithmResearchLab](https://github.com/NoctilumeDev/AlgorithmResearchLab)** | 为固定定义下的代理有效性准备的漂移算法研究线 | 自己的研究范围、实验制品，以及在声明条件下代理是否支持固定目标的有界结论 | 人的目标或授权；已实现检测器、统一漂移机制、现实效用，或代理有效性漂移与相邻目标、义务、推导变化之间已经被证明的关联 |
 | **[PlainJournal](https://github.com/NoctilumeDev/PlainJournal)** | 分布式业务与可靠性参考系统 | 自身业务、数据和交易状态，以及已声明范围内的运行证据 | 基础设施项目的状态或通用真理 |
 | **[DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary)** | 完整增强型单体业务样本 | 图书业务、角色边界、协作流程及其项目证据 | VeriTrail、JPyxis 或 FlowKernel 的实现证明 |
 | **[Qixu / 期序](https://github.com/NoctilumeDev/Qixu)** | 校园空间、稀缺资源分配与使用权治理参考系统 | 空间档案、资格、分配结果、预约、使用权、活动场地、冲突处置与维修治理事实 | 暗室账号和图书业务、外部身份提供方角色、其他系统的审批权或验收结论 |
@@ -170,6 +171,7 @@ human premise and Seal
 - 主页 README 只保留一张简图和本文入口；
 - 每个项目自己的阶段、版本、Release 与停止线只在该项目仓库维护；
 - JPyxis/FlowKernel 与 VeriTrail 的 Adapter 尚未建立实现事实，不在任何仓库提前创建空壳；
+- AlgorithmResearchLab 保持独立：在自己的证据成立前，不宣称已有漂移检测器、跨项目 Adapter 或共享机制；
 - 将来真正开工时，先由事实来源仓库冻结“可导出的只读收据合同”，再由消费侧建立 Adapter 合同和
   一条真实纵向切片；是否独立成包或仓库，由依赖、发布和故障边界的实际证据决定。
 
@@ -187,5 +189,5 @@ human premise and Seal
 任何一步若必须共享可变状态、复制对方的 Verdict 或绕过对方 authority 才能成立，就停止组合并回到
 合同层，而不是继续增加兼容分支。
 
-这张图描述的是可组合体系，不是强制部署拓扑，也不是把十一个被映射的仓库改造成一组互相启动才能工作的
+这张图描述的是可组合体系，不是强制部署拓扑，也不是把十二个被映射的仓库改造成一组互相启动才能工作的
 微服务。仓库之间共享方法和版本化产物，不共享可变控制状态。

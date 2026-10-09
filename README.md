@@ -3,20 +3,21 @@
 > **中文版本状态**
 >
 > - 内容基线（G3A 拆分前的混合主页）：[`NoctilumeDev@3fddab9`](https://github.com/NoctilumeDev/NoctilumeDev/tree/3fddab9d64401a93b6ec9be7175c5b0d2c3d9102)
-> - Edition revision：`zh-profile-v1-r6`
-> - Source synchronized：`2026-10-04`
-> - Edition updated：`2026-10-08`
+> - 当前同步来源：[`NoctilumeDev@dda098d`](https://github.com/NoctilumeDev/NoctilumeDev/tree/dda098d434bf32aa44ede4ddfb9bc74fe4d69bc7)
+> - Edition revision：`zh-profile-v1-r7`
+> - Source synchronized：`2026-10-09`
+> - Edition updated：`2026-10-09`
 > - 当前英文主页：[English Edition](https://github.com/NoctilumeDev)
 >
 > 中文版是带来源坐标、独立修订的语言派生视图；允许晚于英文版更新，但不会把旧内容伪装成已经同步到新的英文 revision。
 
 AI-assisted solo engineer studying how unreliable code generation can enter reliable software systems without quietly acquiring authority.
 
-大模型可以很快写出代码，但“生成了代码”“测试出现绿灯”和“一个工程事实已经成立”不是同一件事。我的项目从五个单文件 HTML 开始，经过完整业务系统、微服务训练场和真实单机停止线，逐步把问题拆成三个权责独立的试验台。
+大模型可以很快写出代码，但“生成了代码”“测试出现绿灯”和“一个工程事实已经成立”不是同一件事。我的项目从五个单文件 HTML 开始，经过完整业务系统、微服务训练场和真实单机停止线，逐步把问题拆成四条责任边界不同的研究线。
 
 *“Student” describes my current identity, not a project maturity level. 项目成熟度由证据、发布状态与明确边界分别说明。*
 
-**Start here / 快速入口：** [项目主线](#一张图看懂这些项目--project-journey) · [三个试验台](#三个试验台分别回答什么) · [工程方法](#solo-engineering-toolkit--单兵工程三剑客)
+**Start here / 快速入口：** [项目主线](#一张图看懂这些项目--project-journey) · [四条研究线](#四条研究线分别回答什么) · [工程方法](#solo-engineering-toolkit--单兵工程三剑客)
 
 > **认知支线：** AI 加速了认知变异，却不自动带来认知进步。真正决定结果的，是选择是否有效、失败能否被保留，以及谁拥有目标、证据、否决权与修改权。完整文章见 **[《AI 的上限，不在答案里》](docs/ai-cognitive-feedback-loop.md)**。
 
@@ -43,7 +44,7 @@ AI-assisted solo engineer studying how unreliable code generation can enter reli
 
 ## 一张图看懂这些项目 / Project Journey
 
-![从五个 HTML 和暗室藏书分叉到期序与素简记，再到 VeriTrail、JPyxis 与 FlowKernel 的工程演化图](assets/project-journey.svg)
+![从五个 HTML 和暗室藏书分叉到期序与素简记，再到 VeriTrail、JPyxis、FlowKernel 与漂移算法四条研究线的工程演化图](assets/project-journey.svg)
 
 <p align="center"><sub>实线表示问题演化；黄色虚线表示停止边界与经验回流。图中项目各自拥有状态，不是一条已经集成完成的调用链。<a href="assets/project-journey.svg">打开大图 / Open full-size diagram</a></sub></p>
 
@@ -55,9 +56,10 @@ AI-assisted solo engineer studying how unreliable code generation can enter reli
 4. **[PlainJournal / 素简记](https://github.com/NoctilumeDev/PlainJournal)** 从另一条业务问题继续成为分布式、可靠性、降级、多实例与真实验收的训练场；也正是在这里，16 GiB 单机容量和“不能把没证明的部分写成完成”成为硬边界。
 5. **[PlainJournalPro / 素简记 Pro](https://github.com/NoctilumeDev/PlainJournalPro)** 保存多商户、平台账本和跨机演进问题。当前资源不足以完成同强度验收，所以它只保留未来架构，不冒充已实现产品。
 6. 这些停止线进一步暴露：AI 能协助生产代码，却不能凭自己的输出证明代码、测试、环境和发布事实。于是验收方法被抽成了独立的 **[VeriTrail / 验迹](https://github.com/NoctilumeDev/VeriTrail)**。
-7. 再往下追问“谁拥有执行权、谁拥有系统能力与资源权”，问题继续分成 **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** 与 **[FlowKernel / 流核](https://github.com/NoctilumeDev/FlowKernel)**。FlowKernel 的目标位置是面向不可信智能体的操作系统级信任与执行基座，当前计划以 C-first target 与 Linux reference lab 分别承载目标实验和对照实验，并非一个已经完成的跨平台“AI OS”。三者各自拥有独立问题与状态；已经落地的部分可以单独闭合自己的问题，未来也可以通过版本化合同形成更大系统的候选地基。
+7. 再往下追问“谁拥有执行权、谁拥有系统能力与资源权”，问题继续分成 **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** 与 **[FlowKernel / 流核](https://github.com/NoctilumeDev/FlowKernel)**。FlowKernel 的目标位置是面向不可信智能体的操作系统级信任与执行基座，当前计划以 C-first target 与 Linux reference lab 分别承载目标实验和对照实验，并非一个已经完成的跨平台“AI OS”。
+8. 与此同时，**[AlgorithmResearchLab](https://github.com/NoctilumeDev/AlgorithmResearchLab)** 以“漂移算法”保存了第四个问题：在目标与代理指标定义保持不变时，代理指标是否仍能在有界观测与反馈下支持既定目标的决策？研究尚未开始。目标替换、证明义务替换与推导缺口仍是当前范围之外的相邻候选，尚未被证明属于同一种机制。
 
-### 三个试验台分别回答什么
+### 四条研究线分别回答什么
 
 - **VeriTrail / 验迹**
   - **核心问题：** 这次运行究竟证明了什么？证据是否足以支持 sealed 条件？
@@ -68,14 +70,17 @@ AI-assisted solo engineer studying how unreliable code generation can enter reli
 - **FlowKernel / 流核**
   - **核心问题：** 不可靠的 Agent、模型或规则，怎样在可撤销、可归属、可观察的 Capability 与资源边界内行动？
   - **当前事实边界：** 规划中的操作系统级信任与执行基座；implementation has not started，跨平台 adapter 与 C-first target 都不能写成已有能力。
+- **漂移算法 / AlgorithmResearchLab**
+  - **核心问题：** 在目标与代理指标定义保持不变时，代理指标是否仍能随着观测、优化与环境反馈支持既定目标的决策？
+  - **当前事实边界：** 目前只有命名约定、研究范围、工作法、文献线索与目录说明，状态仍为 `RESEARCH_NOT_STARTED`；不宣称已有检测器、统一漂移机制或现实效用。目标与义务替换、推导支持缺失仍在当前研究范围之外，其分类与关系保持开放。
 
-它们不是必须凑齐才能成立的一套零件。已经落地的试验台单独使用时，各自都能闭合自己的问题，也已经足够好用；一旦通过版本化合同组合起来，又会在不混淆权责的前提下产生单体没有的“化学反应”。
+四条研究线不是必须凑齐才能成立的一套零件，也不是一条强制流水线。每条线先独立闭合自己的问题；未来若发生协作，默认只交换来源方拥有、只读且带版本的制品，不因此合并权威。人拥有目标与授权，现实拥有真相。
 
 ### 为什么验迹被单独放大
 
-VeriTrail 本身是一个完整的小系统：单独用于本地 Web 项目、静态站点或 GitHub 公开事实时，不需要等待 JPyxis 或 FlowKernel。它也可以进入更大的组合，但只负责 `Plan + Evidence → deterministic Verdict`；它不会因为位于中间就接管计算执行、系统权限、资源调度或人的最终处置。
+VeriTrail 本身是一个完整的小系统：单独用于本地 Web 项目、静态站点或 GitHub 公开事实时，不需要等待其他研究线。它也可以进入更大的组合，但只负责 `Plan + Evidence → deterministic Verdict`；它不会因为位于中间就接管计算执行、系统权限、资源调度、目标定义或人的最终处置。
 
-这三个试验台也没有消灭素简记的问题。当前已经成立的边界仍从单机或单节点起步；一旦组合成更大的系统，资源容量、真实部署、恢复、跨机状态与验收成本会重新出现。于是素简记不只是早期项目，而是下一阶段基础设施必须持续回看的真实经验源。
+这四条研究线也没有消灭素简记的问题。当前已经成立的边界仍从单机或单节点起步；一旦组合成更大的系统，资源容量、真实部署、恢复、跨机状态与验收成本会重新出现。于是素简记不只是早期项目，而是下一阶段基础设施必须持续回看的真实经验源。
 
 ## Flagship Work
 
@@ -94,6 +99,8 @@ VeriTrail 本身是一个完整的小系统：单独用于本地 Web 项目、�
 - **[FlowKernel](https://github.com/NoctilumeDev/FlowKernel)** — 面向不可信智能体的操作系统级信任与执行基座研究；策略可提案，确定性边界保留授权与落实权
 
   [研究计划与当前边界](https://github.com/NoctilumeDev/FlowKernel)
+
+- **[漂移算法 / AlgorithmResearchLab](https://github.com/NoctilumeDev/AlgorithmResearchLab)** — 面向固定目标与固定代理定义下的代理有效性研究准备线；研究尚未开始，目标替换、义务替换与推导缺口仍是范围外候选
 
 ## Selected Experiments
 
@@ -124,16 +131,17 @@ restructuring, not necessarily project inception.
 
 ## Repository System Map / 仓库关系图
 
-主页图表达的是**历史因果与经验反馈**，不是把仓库画成一条强依赖调用链。真正组合时，每个系统仍保留自己的状态与权威：FlowKernel 未来以操作系统级信任语义约束系统能力、资源、撤销与恢复；JPyxis 管理异构计算合同与执行；Evidence Adapter 有界观察来源事实；VeriTrail 依据 sealed Plan 裁决现有 Evidence；Human 拥有前提、Seal 与最终处置；Reality 拥有真相。
+主页图表达的是**历史因果与经验反馈**，不是把仓库画成一条强依赖调用链。漂移算法研究固定目标与代理定义下的代理有效性；FlowKernel 未来以操作系统级信任语义约束系统能力、资源、撤销与恢复；JPyxis 管理异构计算合同与执行；Evidence Adapter 有界观察来源事实；VeriTrail 依据 sealed Plan 裁决现有 Evidence；Human 拥有目标、授权、前提、Seal 与最终处置；Reality 拥有真相。
 
 GitHub 只拥有并暴露其平台信任域内的状态，不是外部世界的真理证明；Review Attention 也不是 Verdict
-引擎。更完整的双层结构、十一个被映射工程仓库的角色、插件接缝与禁止越界见
+引擎。更完整的双层结构、十二个被映射工程仓库的角色、插件接缝与禁止越界见
 **[Repository System Map / 仓库体系关系图](docs/repository-system-map.md)**。
 
 ## Research / Planned
 
 - [PlainJournalPro](https://github.com/NoctilumeDev/PlainJournalPro) - reference architecture for a future multi-merchant evolution; explicitly not presented as implemented software.
 - [FlowKernel](https://github.com/NoctilumeDev/FlowKernel) - a planned OS-level trust and execution substrate for bounded agentic action, authority, lifecycle-aware resources and recovery; implementation has not started.
+- [AlgorithmResearchLab](https://github.com/NoctilumeDev/AlgorithmResearchLab) - prepared Drift Algorithm research line for proxy validity under fixed definitions; research has not started.
 
 <details>
 <summary><strong>Project Journey / 展开项目沿革与时间说明</strong></summary>
@@ -178,7 +186,11 @@ GitHub 只拥有并暴露其平台信任域内的状态，不是外部世界的�
 
 - **2026 年 9 月 · FlowKernel / 流核**
 
-  当问题继续追到“Agent、模型或规则凭什么获得系统能力和资源”时，FlowKernel 作为第三个试验台被提出。它把这个问题定位成面向不可信智能体的操作系统级信任与执行基座，并以 C-first target 与 Linux reference lab 作为候选实验载体。它研究 Capability、硬资源边界、生命周期、撤销、恢复与 provenance，但当前只保存研究问题和合同路线；实现尚未开始，也没有跨平台 adapter。
+  当问题继续追到“Agent、模型或规则凭什么获得系统能力和资源”时，FlowKernel 在当时作为第三个试验台被提出。它把这个问题定位成面向不可信智能体的操作系统级信任与执行基座，并以 C-first target 与 Linux reference lab 作为候选实验载体。它研究 Capability、硬资源边界、生命周期、撤销、恢复与 provenance，但当前只保存研究问题和合同路线；实现尚未开始，也没有跨平台 adapter。
+
+- **2026 年 10 月 · 漂移算法 / AlgorithmResearchLab**
+
+  当问题转向“指标持续改善时，它是否仍在帮助实现原来的目标”，AlgorithmResearchLab 建立了漂移算法的研究准备面。当前核心范围只讨论目标与代理指标定义固定时的代理决策有效性；目标替换、证明义务替换和推导缺口只作为待讨论候选保存。仓库仍为 `RESEARCH_NOT_STARTED`，没有算法实现、实验结果、检测器或统一机制声明。
 
 工程闭环可以冻结，审美、内容、认知和下一阶段仍会继续生长。敬请期待。
 
@@ -195,6 +207,7 @@ GitHub 只拥有并暴露其平台信任域内的状态，不是外部世界的�
 - Preserve JPyxis's control, definition and runtime ownership boundaries; exact frozen milestones and evolution claims remain authoritative only in its project repository.
 - Keep public claims, CI, Releases and concise evidence entry points aligned across maintained repositories.
 - Keep FlowKernel and PlainJournalPro visibly planned until executable evidence changes their status.
+- Keep AlgorithmResearchLab visibly `RESEARCH_NOT_STARTED`; do not promote adjacent objective, obligation, or derivation changes into its current scope without its own evidence.
 
 Detailed architecture decisions, test evidence, and release artifacts live in each project repository.
 
