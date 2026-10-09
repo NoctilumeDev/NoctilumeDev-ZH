@@ -26,6 +26,7 @@ const requiredFiles = [
   "docs/one-person-big-company.pdf",
 ];
 const mappedRepositories = [
+  "AlgorithmResearchLab",
   "DarkRoomLibrary",
   "FlowKernel",
   "InkNarratives",
@@ -39,7 +40,8 @@ const mappedRepositories = [
 ];
 const mappedRepositoryCount = mappedRepositories.length + 1; // Includes this profile repository.
 const expectedInitialSource = "3fddab9d64401a93b6ec9be7175c5b0d2c3d9102";
-const expectedEditionRevision = "zh-profile-v1-r6";
+const expectedLatestSource = "dda098d434bf32aa44ede4ddfb9bc74fe4d69bc7";
+const expectedEditionRevision = "zh-profile-v1-r7";
 
 function fail(message) {
   failures.push(message);
@@ -79,10 +81,19 @@ if (edition) {
   if (edition.canonicalEnglishProfile !== "https://github.com/NoctilumeDev") {
     fail("EDITION.json: canonical English route is missing");
   }
-  if (edition.lastSynchronized !== "2026-10-04") {
+  if (edition.latestSynchronizedSource?.repository !== "https://github.com/NoctilumeDev/NoctilumeDev") {
+    fail("EDITION.json: unexpected latest synchronized source repository");
+  }
+  if (edition.latestSynchronizedSource?.commit !== expectedLatestSource) {
+    fail(`EDITION.json: latest synchronized source commit must be ${expectedLatestSource}`);
+  }
+  if (edition.latestSynchronizedSource?.scope !== "four-research-lines-profile-projection") {
+    fail("EDITION.json: unexpected latest synchronized source scope");
+  }
+  if (edition.lastSynchronized !== "2026-10-09") {
     fail("EDITION.json: lastSynchronized must retain the exact source-sync date");
   }
-  if (edition.editionLastUpdated !== "2026-10-08") {
+  if (edition.editionLastUpdated !== "2026-10-09") {
     fail("EDITION.json: editionLastUpdated must identify the current Chinese revision date");
   }
   if (edition.consistencyModel !== "provenance-bound-eventual-consistency") {
@@ -140,9 +151,10 @@ for (const relative of requiredFiles.filter((file) => file.endsWith(".pdf"))) {
 const readme = fs.readFileSync(path.join(root, "README.md"), "utf8").replace(/\r\n/g, "\n");
 for (const editionMarker of [
   "**中文版本状态**",
-  "zh-profile-v1-r6",
-  "2026-10-08",
+  "zh-profile-v1-r7",
+  "2026-10-09",
   "https://github.com/NoctilumeDev/NoctilumeDev/tree/3fddab9d64401a93b6ec9be7175c5b0d2c3d9102",
+  "https://github.com/NoctilumeDev/NoctilumeDev/tree/dda098d434bf32aa44ede4ddfb9bc74fe4d69bc7",
   "[English Edition](https://github.com/NoctilumeDev)",
   "现在由 **[EngineeringGallery](https://github.com/NoctilumeDev/EngineeringGallery)** 承担面向使用者的干净发行展示面",
   "取得 Gallery 发行资格后的产品坐标",
@@ -199,6 +211,8 @@ for (const marker of [
   "VeriTrail / 验迹",
   "JPyxis",
   "FlowKernel / 流核",
+  "漂移算法 / Drift Algorithm",
+  "RESEARCH_NOT_STARTED",
   "回到素简记暴露的单机边界",
 ]) {
   if (!journeySvg.includes(marker)) fail(`project journey: missing semantic marker ${marker}`);
@@ -206,7 +220,8 @@ for (const marker of [
 
 const systemMap = fs.readFileSync(path.join(root, "docs/repository-system-map.md"), "utf8");
 for (const invariant of [
-  "十一个被映射的体系仓库",
+  "十二个被映射的体系仓库",
+  "AlgorithmResearchLab](https://github.com/NoctilumeDev/AlgorithmResearchLab)",
   "Qixu / 期序](https://github.com/NoctilumeDev/Qixu)",
   "该接缝不是 SSO",
   "dome](https://github.com/NoctilumeDev/dome)",
@@ -263,6 +278,13 @@ if (singleMachineEnvironment.includes("七个仓库")) {
 
 if (!readme.includes("implementation has not started")) {
   fail("README.md: FlowKernel planned boundary is missing");
+}
+for (const invariant of [
+  "四条研究线分别回答什么",
+  "RESEARCH_NOT_STARTED",
+  "目标替换、证明义务替换与推导缺口仍是当前范围之外的相邻候选",
+]) {
+  if (!readme.includes(invariant)) fail(`README.md: missing Drift Algorithm boundary ${invariant}`);
 }
 if (!readme.includes("explicitly not presented as implemented software")) {
   fail("README.md: PlainJournalPro planned boundary is missing");

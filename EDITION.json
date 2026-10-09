@@ -1,13 +1,18 @@
 {
   "schemaVersion": 1,
   "language": "zh-CN",
-  "editionRevision": "zh-profile-v1-r6",
+  "editionRevision": "zh-profile-v1-r7",
   "initialContentSource": {
     "repository": "https://github.com/NoctilumeDev/NoctilumeDev",
     "commit": "3fddab9d64401a93b6ec9be7175c5b0d2c3d9102"
   },
   "canonicalEnglishProfile": "https://github.com/NoctilumeDev",
-  "lastSynchronized": "2026-10-04",
-  "editionLastUpdated": "2026-10-08",
+  "latestSynchronizedSource": {
+    "repository": "https://github.com/NoctilumeDev/NoctilumeDev",
+    "commit": "dda098d434bf32aa44ede4ddfb9bc74fe4d69bc7",
+    "scope": "four-research-lines-profile-projection"
+  },
+  "lastSynchronized": "2026-10-09",
+  "editionLastUpdated": "2026-10-09",
   "consistencyModel": "provenance-bound-eventual-consistency"
 }
