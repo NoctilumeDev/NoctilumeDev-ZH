@@ -40,8 +40,8 @@ const mappedRepositories = [
 ];
 const mappedRepositoryCount = mappedRepositories.length + 1; // Includes this profile repository.
 const expectedInitialSource = "3fddab9d64401a93b6ec9be7175c5b0d2c3d9102";
-const expectedLatestSource = "d07a8dbffcc92bf91a033b4e9c6d95be3e8ba687";
-const expectedEditionRevision = "zh-profile-v1-r8";
+const expectedLatestSource = "54c456f592e5c1719f06e251525f5eb1dd82f8e8";
+const expectedEditionRevision = "zh-profile-v1-r9";
 
 function fail(message) {
   failures.push(message);
@@ -87,7 +87,7 @@ if (edition) {
   if (edition.latestSynchronizedSource?.commit !== expectedLatestSource) {
     fail(`EDITION.json: latest synchronized source commit must be ${expectedLatestSource}`);
   }
-  if (edition.latestSynchronizedSource?.scope !== "crud-four-line-problem-frame") {
+  if (edition.latestSynchronizedSource?.scope !== "authority-research-boundary") {
     fail("EDITION.json: unexpected latest synchronized source scope");
   }
   if (edition.lastSynchronized !== "2026-10-10") {
@@ -151,10 +151,10 @@ for (const relative of requiredFiles.filter((file) => file.endsWith(".pdf"))) {
 const readme = fs.readFileSync(path.join(root, "README.md"), "utf8").replace(/\r\n/g, "\n");
 for (const editionMarker of [
   "**中文版本状态**",
-  "zh-profile-v1-r8",
+    "zh-profile-v1-r9",
   "2026-10-10",
   "https://github.com/NoctilumeDev/NoctilumeDev/tree/3fddab9d64401a93b6ec9be7175c5b0d2c3d9102",
-  "https://github.com/NoctilumeDev/NoctilumeDev/tree/d07a8dbffcc92bf91a033b4e9c6d95be3e8ba687",
+    "https://github.com/NoctilumeDev/NoctilumeDev/tree/54c456f592e5c1719f06e251525f5eb1dd82f8e8",
   "[English Edition](https://github.com/NoctilumeDev)",
   "现在由 **[EngineeringGallery](https://github.com/NoctilumeDev/EngineeringGallery)** 承担面向使用者的干净发行展示面",
   "取得 Gallery 发行资格后的产品坐标",
