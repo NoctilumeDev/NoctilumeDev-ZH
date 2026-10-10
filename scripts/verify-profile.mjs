@@ -322,6 +322,8 @@ for (const invariant of [
 const philosophersKpi = fs.readFileSync(path.join(root, "docs/philosophers-kpi.md"), "utf8");
 for (const invariant of [
   "## 单个动作还没有结束，问题就可能已经换了",
+  "`UNKNOWN` 不能被偷换成 `WRONG`，但也不能被偷换成 `SAFE`",
+  "按最坏情况处理”是安全与授权策略，不是对 `B'` 真假的事实判决",
   "枚举可以帮助发现问题，不能自动把未覆盖空间宣布为安全",
   "## 局部最优，不等于全局最优",
   "每个局部动作都合理\n≠ 组合后的路径合法",
