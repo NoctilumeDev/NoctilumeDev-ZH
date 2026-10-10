@@ -323,6 +323,8 @@ const philosophersKpi = fs.readFileSync(path.join(root, "docs/philosophers-kpi.m
 for (const invariant of [
   "## 单个动作还没有结束，问题就可能已经换了",
   "枚举可以帮助发现问题，不能自动把未覆盖空间宣布为安全",
+  "## 局部最优，不等于全局最优",
+  "每个局部动作都合理\n≠ 组合后的路径合法",
   "只读缩小了动作权限，不会自动取得语义正确性",
   "## 兜底也不是神谕",
   "四个 CRUD 动词与四条研究线不是一一对应",
