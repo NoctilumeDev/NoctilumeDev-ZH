@@ -40,8 +40,8 @@ const mappedRepositories = [
 ];
 const mappedRepositoryCount = mappedRepositories.length + 1; // Includes this profile repository.
 const expectedInitialSource = "3fddab9d64401a93b6ec9be7175c5b0d2c3d9102";
-const expectedLatestSource = "dda098d434bf32aa44ede4ddfb9bc74fe4d69bc7";
-const expectedEditionRevision = "zh-profile-v1-r7";
+const expectedLatestSource = "d07a8dbffcc92bf91a033b4e9c6d95be3e8ba687";
+const expectedEditionRevision = "zh-profile-v1-r8";
 
 function fail(message) {
   failures.push(message);
@@ -87,13 +87,13 @@ if (edition) {
   if (edition.latestSynchronizedSource?.commit !== expectedLatestSource) {
     fail(`EDITION.json: latest synchronized source commit must be ${expectedLatestSource}`);
   }
-  if (edition.latestSynchronizedSource?.scope !== "four-research-lines-profile-projection") {
+  if (edition.latestSynchronizedSource?.scope !== "crud-four-line-problem-frame") {
     fail("EDITION.json: unexpected latest synchronized source scope");
   }
-  if (edition.lastSynchronized !== "2026-10-09") {
+  if (edition.lastSynchronized !== "2026-10-10") {
     fail("EDITION.json: lastSynchronized must retain the exact source-sync date");
   }
-  if (edition.editionLastUpdated !== "2026-10-09") {
+  if (edition.editionLastUpdated !== "2026-10-10") {
     fail("EDITION.json: editionLastUpdated must identify the current Chinese revision date");
   }
   if (edition.consistencyModel !== "provenance-bound-eventual-consistency") {
@@ -151,10 +151,10 @@ for (const relative of requiredFiles.filter((file) => file.endsWith(".pdf"))) {
 const readme = fs.readFileSync(path.join(root, "README.md"), "utf8").replace(/\r\n/g, "\n");
 for (const editionMarker of [
   "**中文版本状态**",
-  "zh-profile-v1-r7",
-  "2026-10-09",
+  "zh-profile-v1-r8",
+  "2026-10-10",
   "https://github.com/NoctilumeDev/NoctilumeDev/tree/3fddab9d64401a93b6ec9be7175c5b0d2c3d9102",
-  "https://github.com/NoctilumeDev/NoctilumeDev/tree/dda098d434bf32aa44ede4ddfb9bc74fe4d69bc7",
+  "https://github.com/NoctilumeDev/NoctilumeDev/tree/d07a8dbffcc92bf91a033b4e9c6d95be3e8ba687",
   "[English Edition](https://github.com/NoctilumeDev)",
   "现在由 **[EngineeringGallery](https://github.com/NoctilumeDev/EngineeringGallery)** 承担面向使用者的干净发行展示面",
   "取得 Gallery 发行资格后的产品坐标",
@@ -186,6 +186,18 @@ for (const invariant of [
   "具体门禁由各仓库自己的风险与合同决定",
 ]) {
   if (!readme.includes(invariant)) fail(`README.md: missing evidence-feedback invariant ${invariant}`);
+}
+
+for (const invariant of [
+  "#### 为什么需要四条研究线",
+  "增删改查与四条研究线不是一一对应",
+  "这些是值得研究的问题形状，不是 AlgorithmResearchLab 已经取得的研究结论",
+  "诚实的证据状态只能是 `UNKNOWN` 或 `NOT_PROVEN`，不能自动判成 `WRONG`",
+  "那是授权策略，不是对 `B'` 为假的事实判决",
+  "局部成功不能证明全局正确",
+  "新证据可以改写下一轮计划，不能悄悄扩大当前 attempt",
+]) {
+  if (!readme.includes(invariant)) fail(`README.md: missing four-line problem decomposition ${invariant}`);
 }
 
 if (readme.includes("VeriTrail#发布状态")) {
