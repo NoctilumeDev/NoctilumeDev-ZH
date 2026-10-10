@@ -3,10 +3,10 @@
 > **中文版本状态**
 >
 > - 内容基线（G3A 拆分前的混合主页）：[`NoctilumeDev@3fddab9`](https://github.com/NoctilumeDev/NoctilumeDev/tree/3fddab9d64401a93b6ec9be7175c5b0d2c3d9102)
-> - 当前同步来源：[`NoctilumeDev@dda098d`](https://github.com/NoctilumeDev/NoctilumeDev/tree/dda098d434bf32aa44ede4ddfb9bc74fe4d69bc7)
-> - Edition revision：`zh-profile-v1-r7`
-> - Source synchronized：`2026-10-09`
-> - Edition updated：`2026-10-09`
+> - 当前同步来源：[`NoctilumeDev@d07a8db`](https://github.com/NoctilumeDev/NoctilumeDev/tree/d07a8dbffcc92bf91a033b4e9c6d95be3e8ba687)
+> - Edition revision：`zh-profile-v1-r8`
+> - Source synchronized：`2026-10-10`
+> - Edition updated：`2026-10-10`
 > - 当前英文主页：[English Edition](https://github.com/NoctilumeDev)
 >
 > 中文版是带来源坐标、独立修订的语言派生视图；允许晚于英文版更新，但不会把旧内容伪装成已经同步到新的英文 revision。
@@ -60,6 +60,29 @@ AI-assisted solo engineer studying how unreliable code generation can enter reli
 8. 与此同时，**[AlgorithmResearchLab](https://github.com/NoctilumeDev/AlgorithmResearchLab)** 以“漂移算法”保存了第四个问题：在目标与代理指标定义保持不变时，代理指标是否仍能在有界观测与反馈下支持既定目标的决策？研究尚未开始。目标替换、证明义务替换与推导缺口仍是当前范围之外的相邻候选，尚未被证明属于同一种机制。
 
 ### 四条研究线分别回答什么
+
+#### 为什么需要四条研究线
+
+当 AI 接入系统以后，增、删、改、查不再只是四个普通的 API 动词。同一个请求可能沿着几条相互独立的轴发生偏离：目标与代理、授权与范围、计算与生命周期、证据与裁决。想证明 `A`，实际得到的可能是 `A'`；被授权的证明义务 `B` 可能被换成 `B'`；也可能在 `A -> B -> C` 中插入 `B'`，却没有证明它仍然保留原来的推导路径。这些是值得研究的问题形状，不是 AlgorithmResearchLab 已经取得的研究结论。
+
+当 `B` 变成 `B'` 时，诚实的证据状态只能是 `UNKNOWN` 或 `NOT_PROVEN`，不能自动判成 `WRONG`。但如果动作可能造成有害副作用，又没有独立兜底或恢复路径，系统仍应按最坏风险收紧当前 attempt。那是授权策略，不是对 `B'` 为假的事实判决。
+
+放开增、删、改会扩大副作用和执行顺序的状态空间。只允许查，可以显著降低直接修改系统的风险，却不能消除语义不确定性：模型是否理解了请求，是否仍在追逐原目标，是否用正确事实回答了错误问题，是否产生了幻觉。普通程序里的重试、异常补偿和最终一致性可以修复确定性的状态转换，却不能自动证明最初的理解正确；甚至可能出现 AI 的判断原本正确，而兜底把结果改错。
+
+组合以后也是同样。每个 Agent 都可能改善自己的 KPI，每个局部动作单看也都合理，最终路径却违反共同目标、不变量或授权边界。局部成功不能证明全局正确。
+
+适当放权也不会消灭信息差。与其相信 Agent 对自己推理过程的说明，不如把冻结目标、明确动作、attempt 级权限、来源方观察、保留证据与独立资格外置成合同。信息不足时应缩小权限或停止；新证据可以改写下一轮计划，不能悄悄扩大当前 attempt。
+
+```text
+人的目标与授权
+-> Agent 解释
+-> 有界 CRUD 能力
+-> 计算执行与生命周期
+-> 来源方事实与 Evidence
+-> 有界 Verdict 与人的最终处置
+```
+
+增删改查与四条研究线不是一一对应：前者描述系统里可能发生什么，后者拆分谁对什么问题负责。分布式、微服务、高并发、同步与异步、生命周期和一致性还会继续放大这些组合，但这里只把它们标为相邻系统维度，不写成已经解决的能力。
 
 - **VeriTrail / 验迹**
   - **核心问题：** 这次运行究竟证明了什么？证据是否足以支持 sealed 条件？
