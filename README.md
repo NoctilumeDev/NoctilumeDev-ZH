@@ -3,8 +3,8 @@
 > **中文版本状态**
 >
 > - 内容基线（G3A 拆分前的混合主页）：[`NoctilumeDev@3fddab9`](https://github.com/NoctilumeDev/NoctilumeDev/tree/3fddab9d64401a93b6ec9be7175c5b0d2c3d9102)
-> - 当前同步来源：[`NoctilumeDev@d07a8db`](https://github.com/NoctilumeDev/NoctilumeDev/tree/d07a8dbffcc92bf91a033b4e9c6d95be3e8ba687)
-> - Edition revision：`zh-profile-v1-r8`
+> - 当前同步来源：[`NoctilumeDev@54c456f`](https://github.com/NoctilumeDev/NoctilumeDev/tree/54c456f592e5c1719f06e251525f5eb1dd82f8e8)
+> - Edition revision：`zh-profile-v1-r9`
 > - Source synchronized：`2026-10-10`
 > - Edition updated：`2026-10-10`
 > - 当前英文主页：[English Edition](https://github.com/NoctilumeDev)
@@ -23,7 +23,7 @@ AI-assisted solo engineer studying how unreliable code generation can enter reli
 
 ## 哲学家的 KPI / The KPI Philosophers
 
-![四个拥有各自目标函数的 Agent 在共享状态上执行查、删、改、增，由此暴露报告、授权、完整事实与执行过程的边界](assets/philosophers-kpi.svg)
+![四个拥有各自目标函数的 Agent 在共享状态上执行查、删、改、增，由此暴露报告、授权、完整事实、合法执行、全局正确与人的最终处置之间的边界](assets/philosophers-kpi.svg)
 
 <p align="center"><sub><a href="assets/philosophers-kpi.svg">打开大图 / Open full-size diagram</a></sub></p>
 
@@ -44,7 +44,7 @@ AI-assisted solo engineer studying how unreliable code generation can enter reli
 
 ## 一张图看懂这些项目 / Project Journey
 
-![从五个 HTML 和暗室藏书分叉到期序与素简记，再到 VeriTrail、JPyxis、FlowKernel 与漂移算法四条研究线的工程演化图](assets/project-journey.svg)
+![从业务分叉与单机边界，经 dome 的有限只读收权实验，走向 VeriTrail、JPyxis、FlowKernel 与漂移算法四条研究线的工程演化图](assets/project-journey.svg)
 
 <p align="center"><sub>实线表示问题演化；黄色虚线表示停止边界与经验回流。图中项目各自拥有状态，不是一条已经集成完成的调用链。<a href="assets/project-journey.svg">打开大图 / Open full-size diagram</a></sub></p>
 
@@ -71,7 +71,13 @@ AI-assisted solo engineer studying how unreliable code generation can enter reli
 
 组合以后也是同样。每个 Agent 都可能改善自己的 KPI，每个局部动作单看也都合理，最终路径却违反共同目标、不变量或授权边界。局部成功不能证明全局正确。
 
-适当放权也不会消灭信息差。与其相信 Agent 对自己推理过程的说明，不如把冻结目标、明确动作、attempt 级权限、来源方观察、保留证据与独立资格外置成合同。信息不足时应缩小权限或停止；新证据可以改写下一轮计划，不能悄悄扩大当前 attempt。
+现在可以把应对方式收成三条：
+
+1. **收权 / Authority Minimization**：拿掉增、删、改，只允许有限查询或提出候选动作。[`dome`](https://github.com/NoctilumeDev/dome) 已经给出一个只读反例：它能降低直接副作用，却不能证明语义正确。
+2. **有限放权 / Bounded Delegation**：只返回明确的 attempt 级 Capability。与其相信 Agent 对自己推理过程的说明，不如把冻结目标、明确动作、来源方观察、保留证据与独立资格外置成合同。
+3. **权责分离 / Responsibility Separation**：在有限放权的基础上继续拆开所有权。用户拥有目标与承诺，模型提出候选解释，Policy 决定是否授权，执行层只完成 sealed action，来源系统拥有事实，人处理剩余不确定性与风险；人的最终处置也不会因此成为世界真相。
+
+信息差不会消失。系统只能根据后果、可逆性与可观察性，选择缩小权限、请求澄清或停止；新证据可以改写下一轮计划，不能悄悄扩大当前 attempt。`dome` 为第一条提供了有限定义域内的证据；四条研究线分别保留第二、第三条所需的不同开放问题，并不构成一个已经集成完成的答案。
 
 ```text
 人的目标与授权

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1080" viewBox="0 0 1440 1080" role="img" aria-labelledby="title description">
   <title id="title">NoctilumeDev project journey</title>
-  <desc id="description">From five HTML experiments to DarkRoomLibrary, where Qixu and PlainJournal become separate business branches with distinct fact ownership, then through machine limits to four decoupled research lines for evidence, execution, authority, and proxy validity.</desc>
+  <desc id="description">从五个 HTML 实验到独立业务支线与单机边界，再从 dome 的有限只读收权实验走向四条责任独立的研究线，分别保留证据、执行、授权与代理有效性的开放问题。</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#09101f"/>
@@ -88,9 +88,9 @@
   <path class="stop-line" d="M 1200 285 V 486"/>
   <g filter="url(#shadow)">
     <rect x="170" y="495" width="1100" height="105" rx="22" fill="#20233a" stroke="#76648f"/>
-    <text x="720" y="526" class="eyebrow center" fill="#c4a7e7">问题被抽象，而不是继续堆功能</text>
-    <text x="720" y="558" class="card-title center">证据、执行、授权与代理有效性，需要由不同责任边界承接</text>
-    <text x="720" y="584" class="card-copy center">四条研究线可以互相启发，但不会因此组成强制技术栈</text>
+    <text x="720" y="526" class="eyebrow center" fill="#c4a7e7">从收权实证走向研究前沿</text>
+    <text x="720" y="558" class="card-title center" style="font-size:21px">dome 钉住有限只读定义域；四条研究线分别保留开放问题</text>
+    <text x="720" y="584" class="card-copy center">有限放权与权责分离仍是研究前沿，不是已完成的技术栈</text>
   </g>
 
   <text x="72" y="638" class="eyebrow">FOUR DECOUPLED RESEARCH LINES · 四条责任独立的研究线</text>
