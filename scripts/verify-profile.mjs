@@ -319,6 +319,20 @@ for (const invariant of [
   }
 }
 
+const philosophersKpi = fs.readFileSync(path.join(root, "docs/philosophers-kpi.md"), "utf8");
+for (const invariant of [
+  "## 单个动作还没有结束，问题就可能已经换了",
+  "枚举可以帮助发现问题，不能自动把未覆盖空间宣布为安全",
+  "只读缩小了动作权限，不会自动取得语义正确性",
+  "## 兜底也不是神谕",
+  "四个 CRUD 动词与四条研究线不是一一对应",
+  "它不是第五条研究线",
+]) {
+  if (!philosophersKpi.includes(invariant)) {
+    fail(`KPI philosophers: missing expanded problem invariant ${invariant}`);
+  }
+}
+
 const whenAiEntersTheSystem = fs.readFileSync(
   path.join(root, "docs/when-ai-enters-the-system.md"),
   "utf8",
