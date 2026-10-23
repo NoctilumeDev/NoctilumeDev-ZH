@@ -2,7 +2,7 @@
 
 > 状态：`STABLE ROLE MAP · NO NEW IMPLEMENTATION CLAIM`
 >
-> 映射范围：本文覆盖十二个工程体系仓库。[dome](https://github.com/NoctilumeDev/dome) 保存课程作业、独立项目与文字记录，作为历史归档保留在体系图之外，不承担基础设施角色。
+> 映射范围：英文权威主页与其当前映射工程仓库的稳定角色。`dome` 继续作为历史归档留在体系图之外，不作为重点项目展示。
 >
 > 本文只维护仓库之间相对稳定的职责、依赖方向与未来接缝。每个项目的精确里程碑、版本、
 > Release 与证据坐标，仍以该项目仓库自己的 README 和冻结记录为准。
@@ -18,7 +18,7 @@
 VeriTrail 也不拥有任何来源系统的状态或世界真相，它只依据 sealed Plan、标准 Evidence 与确定性规则
 产生有边界的 `PASS / FAIL / INCONCLUSIVE / PENDING`。
 
-## 十二个被映射的体系仓库不是一棵调用树
+## 被映射的仓库不是一棵调用树
 
 | 仓库 | 稳定角色 | 拥有的事实或责任 | 不拥有的责任 |
 | --- | --- | --- | --- |
@@ -29,11 +29,15 @@ VeriTrail 也不拥有任何来源系统的状态或世界真相，它只依据 
 | **[AlgorithmResearchLab](https://github.com/NoctilumeDev/AlgorithmResearchLab)** | 为固定定义下的代理有效性准备的漂移算法研究线 | 自己的研究范围、实验制品，以及在声明条件下代理是否支持固定目标的有界结论 | 人的目标或授权；已实现检测器、统一漂移机制、现实效用，或代理有效性漂移与相邻目标、义务、推导变化之间已经被证明的关联 |
 | **[PlainJournal](https://github.com/NoctilumeDev/PlainJournal)** | 分布式业务与可靠性参考系统 | 自身业务、数据和交易状态，以及已声明范围内的运行证据 | 基础设施项目的状态或通用真理 |
 | **[DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary)** | 完整增强型单体业务样本 | 图书业务、角色边界、协作流程及其项目证据 | VeriTrail、JPyxis 或 FlowKernel 的实现证明 |
+| **[Qingye / 青野](https://github.com/NoctilumeDev/Qingye)** | 校园组织、共享设备与有界 AI 助手系统 | 社团、活动、设备、本地主体绑定与助手能力在自身领域内的事实 | 通用自然语言正确性、模型写权限或其他系统的业务事实 |
 | **[Qixu / 期序](https://github.com/NoctilumeDev/Qixu)** | 校园空间、稀缺资源分配与使用权治理参考系统 | 空间档案、资格、分配结果、预约、使用权、活动场地、冲突处置与维修治理事实 | 暗室账号和图书业务、外部身份提供方角色、其他系统的审批权或验收结论 |
+| **[GuiHongMail / 归鸿](https://github.com/NoctilumeDev/GuiHongMail)** | 真实 SMTP、当前单机的三服务多语言邮箱系统 | 邮箱、SMTP 接入、投递 worker、邮件、附件、恢复与有界算法合同事实 | 已证明的跨机分布式部署、公网互通或其他项目的服务状态 |
 | **[MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot)** | 框架机制重建与真实全栈验证样本 | IoC、AOP、Web/MVC、JDBC、事务与启动机制的项目事实 | Spring 官方实现等价性或其他仓库的验收结论 |
 | **[MiniLinux](https://github.com/NoctilumeDev/MiniLinux)** | 操作系统机制教学与底层实验支线 | 自身构建、启动、串口、调试与逐轮机制实验事实 | Linux 兼容性、FlowKernel 实现或其他仓库的系统事实 |
 | **[PlainJournalPro](https://github.com/NoctilumeDev/PlainJournalPro)** | 多商户未来架构研究 | 已声明的未来问题、边界与设计方向 | 尚未实现能力或可运行产品事实 |
 | **[InkNarratives](https://github.com/NoctilumeDev/InkNarratives)** | 内容、排版与叙事视觉实验 | 自身静态作品与内容状态 | 工程基础设施的验证责任 |
+
+公开版图可以用两层阅读：业务与产品系统拥有领域事实和用户可见流程；研究与基础仓库分别承接证据、计算、授权、代理有效性、框架与操作系统机制问题。问题可以从第一层进入第二层，权力、状态、资格与完成结论不会自动跟过去。
 
 业务系统、框架与系统机制实验、内容实验提供真实问题、控制组与证据来源；基础设施仓库提炼可复用的合同、
 执行或验收方法。前者不是后者的“测试附件”，后者也不能反向接管前者的业务状态。
@@ -189,5 +193,5 @@ human premise and Seal
 任何一步若必须共享可变状态、复制对方的 Verdict 或绕过对方 authority 才能成立，就停止组合并回到
 合同层，而不是继续增加兼容分支。
 
-这张图描述的是可组合体系，不是强制部署拓扑，也不是把十二个被映射的仓库改造成一组互相启动才能工作的
+这张图描述的是可组合体系，不是强制部署拓扑，也不是把这些仓库改造成一组互相启动才能工作的
 微服务。仓库之间共享方法和版本化产物，不共享可变控制状态。

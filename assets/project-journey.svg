@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1080" viewBox="0 0 1440 1080" role="img" aria-labelledby="title description">
   <title id="title">NoctilumeDev project journey</title>
-  <desc id="description">从五个 HTML 实验到独立业务支线与单机边界，再从 dome 的有限只读收权实验走向四条责任独立的研究线，分别保留证据、执行、授权与代理有效性的开放问题。</desc>
+  <desc id="description">从五个 HTML 实验到完整与分布式业务系统，再到后续独立产品支线、单机边界与四条责任独立的研究线，分别保留证据、执行、授权与代理有效性的开放问题。</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#09101f"/>
@@ -34,13 +34,14 @@
       .line { fill: none; stroke: #72a9c5; stroke-width: 3; marker-end: url(#arrow); }
       .stop-line { fill: none; stroke: #d5a85b; stroke-width: 3; stroke-dasharray: 10 9; marker-end: url(#arrow-warm); }
       .return-line { fill: none; stroke: #e7bd73; stroke-width: 2; stroke-dasharray: 3 10; opacity: 0.86; marker-end: url(#arrow-warm); }
+      .bridge { fill: none; stroke: #72a9c5; stroke-width: 2; opacity: 0.55; }
     </style>
   </defs>
 
   <rect width="1440" height="1080" rx="28" fill="url(#background)"/>
 
   <text x="72" y="64" class="eyebrow">PROJECT JOURNEY · 问题怎样一步步长出来</text>
-  <text x="72" y="103" class="title">从业务分叉与单机边界，到四条权责分明的研究线</text>
+  <text x="72" y="103" class="title">从视觉练习到业务系统、独立支线与研究问题</text>
 
   <path class="line" d="M 330 215 H 382"/>
   <path class="line" d="M 650 215 H 702"/>
@@ -72,25 +73,38 @@
     <text x="1200" y="270" class="small center">没有同强度证据，就不冒充实现</text>
   </g>
 
-  <path class="line" d="M 520 285 V 327"/>
-  <rect x="396" y="296" width="248" height="26" rx="13" fill="#163b4d" stroke="#4f93ad"/>
-  <text x="520" y="314" class="status center">身份适配 · 不共享数据库</text>
+  <rect x="370" y="300" width="700" height="28" rx="14" fill="#163b4d" stroke="#4f93ad"/>
+  <text x="720" y="319" class="status center">后续独立系统 · 各自拥有事实</text>
 
   <g filter="url(#shadow)">
-    <rect x="360" y="335" width="320" height="130" rx="20" fill="#152b42" stroke="#4f93ad"/>
-    <text x="520" y="365" class="eyebrow center">独立业务支线</text>
-    <text x="520" y="399" class="card-title center">Qixu / 期序</text>
-    <text x="520" y="430" class="card-copy center">空间 · 资格 · 分配 · 使用权</text>
-    <text x="520" y="453" class="small center">独立事实所有权 · 不继承上游角色</text>
+    <rect x="70" y="345" width="380" height="120" rx="20" fill="#152b42" stroke="#4f93ad"/>
+    <text x="260" y="374" class="eyebrow center">有界 AI 接入</text>
+    <text x="260" y="407" class="card-title center">Qingye / 青野</text>
+    <text x="260" y="434" class="card-copy center" style="font-size:15px">Spring Boot · 原生微信 · 只读 AI</text>
+    <text x="260" y="456" class="small center" style="font-size:13px">缩小伤害半径 ≠ 证明语义正确</text>
+
+    <rect x="530" y="345" width="380" height="120" rx="20" fill="#152b42" stroke="#4f93ad"/>
+    <text x="720" y="374" class="eyebrow center">公平分配与使用权</text>
+    <text x="720" y="407" class="card-title center">Qixu / 期序</text>
+    <text x="720" y="434" class="card-copy center" style="font-size:15px">资格 · 志愿 · 分配 · 使用权</text>
+    <text x="720" y="456" class="small center" style="font-size:13px">身份适配 · 不共享数据库</text>
+
+    <rect x="990" y="345" width="380" height="120" rx="20" fill="#152b42" stroke="#4f93ad"/>
+    <text x="1180" y="374" class="eyebrow center">多语言服务边界</text>
+    <text x="1180" y="407" class="card-title center">GuiHongMail / 归鸿</text>
+    <text x="1180" y="434" class="card-copy center" style="font-size:15px">Go 服务 · Python 合同 · TS 客户端</text>
+    <text x="1180" y="456" class="small center" style="font-size:13px">真实 SMTP · 当前单机停止线</text>
   </g>
 
-  <path class="line" d="M 840 285 V 486"/>
-  <path class="stop-line" d="M 1200 285 V 486"/>
+  <path class="bridge" d="M 260 465 V 482 H 720"/>
+  <path class="bridge" d="M 720 465 V 486"/>
+  <path class="bridge" d="M 1180 465 V 482 H 720"/>
+
   <g filter="url(#shadow)">
     <rect x="170" y="495" width="1100" height="105" rx="22" fill="#20233a" stroke="#76648f"/>
-    <text x="720" y="526" class="eyebrow center" fill="#c4a7e7">从收权实证走向研究前沿</text>
-    <text x="720" y="558" class="card-title center" style="font-size:21px">dome 钉住有限只读定义域；四条研究线分别保留开放问题</text>
-    <text x="720" y="584" class="card-copy center">有限放权与权责分离仍是研究前沿，不是已完成的技术栈</text>
+    <text x="720" y="526" class="eyebrow center" fill="#c4a7e7">已证边界 → 研究前沿</text>
+    <text x="720" y="558" class="card-title center" style="font-size:21px">业务停止线暴露问题；四个实验室分别保留独立责任</text>
+    <text x="720" y="584" class="card-copy center">问题可以跨过边界；权力、状态与资格不会自动跟过去</text>
   </g>
 
   <text x="72" y="638" class="eyebrow">FOUR DECOUPLED RESEARCH LINES · 四条责任独立的研究线</text>

@@ -29,19 +29,21 @@ const mappedRepositories = [
   "AlgorithmResearchLab",
   "DarkRoomLibrary",
   "FlowKernel",
+  "GuiHongMail",
   "InkNarratives",
   "JPyxis",
   "MiniLinux",
   "MiniSpringBoot",
   "PlainJournal",
   "PlainJournalPro",
+  "Qingye",
   "Qixu",
   "VeriTrail",
 ];
 const mappedRepositoryCount = mappedRepositories.length + 1; // Includes this profile repository.
 const expectedInitialSource = "3fddab9d64401a93b6ec9be7175c5b0d2c3d9102";
-const expectedLatestSource = "54c456f592e5c1719f06e251525f5eb1dd82f8e8";
-const expectedEditionRevision = "zh-profile-v1-r9";
+const expectedLatestSource = "3fe4b58d598eb66cd6210f0c280f6e7316f5f755";
+const expectedEditionRevision = "zh-profile-v1-r10";
 
 function fail(message) {
   failures.push(message);
@@ -87,13 +89,13 @@ if (edition) {
   if (edition.latestSynchronizedSource?.commit !== expectedLatestSource) {
     fail(`EDITION.json: latest synchronized source commit must be ${expectedLatestSource}`);
   }
-  if (edition.latestSynchronizedSource?.scope !== "authority-research-boundary") {
+  if (edition.latestSynchronizedSource?.scope !== "business-research-landscape") {
     fail("EDITION.json: unexpected latest synchronized source scope");
   }
-  if (edition.lastSynchronized !== "2026-10-10") {
+  if (edition.lastSynchronized !== "2026-10-23") {
     fail("EDITION.json: lastSynchronized must retain the exact source-sync date");
   }
-  if (edition.editionLastUpdated !== "2026-10-10") {
+  if (edition.editionLastUpdated !== "2026-10-23") {
     fail("EDITION.json: editionLastUpdated must identify the current Chinese revision date");
   }
   if (edition.consistencyModel !== "provenance-bound-eventual-consistency") {
@@ -151,10 +153,10 @@ for (const relative of requiredFiles.filter((file) => file.endsWith(".pdf"))) {
 const readme = fs.readFileSync(path.join(root, "README.md"), "utf8").replace(/\r\n/g, "\n");
 for (const editionMarker of [
   "**中文版本状态**",
-    "zh-profile-v1-r9",
-  "2026-10-10",
+    "zh-profile-v1-r10",
+  "2026-10-23",
   "https://github.com/NoctilumeDev/NoctilumeDev/tree/3fddab9d64401a93b6ec9be7175c5b0d2c3d9102",
-    "https://github.com/NoctilumeDev/NoctilumeDev/tree/54c456f592e5c1719f06e251525f5eb1dd82f8e8",
+    "https://github.com/NoctilumeDev/NoctilumeDev/tree/3fe4b58d598eb66cd6210f0c280f6e7316f5f755",
   "[English Edition](https://github.com/NoctilumeDev)",
   "现在由 **[EngineeringGallery](https://github.com/NoctilumeDev/EngineeringGallery)** 承担面向使用者的干净发行展示面",
   "取得 Gallery 发行资格后的产品坐标",
@@ -167,10 +169,11 @@ if (/EngineeringGallery\/(?:tree\/main\/)?projects\//u.test(readme)) {
   fail("README.md: language split must not authorize a Gallery project route");
 }
 for (const heading of [
-  "## Flagship Work",
-  "## Selected Experiments",
+  "## 我现在是谁、现在在做什么",
+  "## 一张图看懂这些项目 / Project Journey",
+  "## 哲学家的 KPI / The KPI Philosophers",
+  "## 四条研究线分别回答什么",
   "## Repository System Map / 仓库关系图",
-  "## Research / Planned",
   "## Maintenance Posture",
   "### Laboratory repositories and release projection / 实验室仓库与发行投影",
   "## Solo Engineering Toolkit / 单兵工程三剑客",
@@ -180,6 +183,9 @@ for (const heading of [
 }
 
 for (const invariant of [
+  "这里记录的是**当前快照**，不是永久身份，也不是不会变化的路线图",
+  "### 业务与产品系统",
+  "### 研究与基础实验",
   "### Evidence-feedback loop / 证据反馈施工回路",
   "绑定当前坐标与最小计划",
   "计划已定义\n≠ 执行完成\n≠ 资格成立\n≠ 状态生效\n≠ 下一步已授权",
@@ -189,7 +195,7 @@ for (const invariant of [
 }
 
 for (const invariant of [
-  "#### 为什么需要四条研究线",
+  "### 为什么需要四条研究线",
   "增删改查与四条研究线不是一一对应",
   "这些是值得研究的问题形状，不是 AlgorithmResearchLab 已经取得的研究结论",
   "诚实的证据状态只能是 `UNKNOWN` 或 `NOT_PROVEN`，不能自动判成 `WRONG`",
@@ -203,7 +209,7 @@ for (const invariant of [
 if (readme.includes("VeriTrail#发布状态")) {
   fail("README.md: stale VeriTrail release-status anchor must not return");
 }
-for (const anchor of ["VeriTrail#当前状态", "VeriTrail#发布坐标"]) {
+for (const anchor of ["VeriTrail#发布坐标"]) {
   if (!readme.includes(anchor)) fail(`README.md: missing current VeriTrail anchor ${anchor}`);
 }
 
@@ -218,7 +224,9 @@ for (const marker of [
   "暗室藏书",
   "素简记",
   "素简记 Pro",
+  "Qingye / 青野",
   "Qixu / 期序",
+  "GuiHongMail / 归鸿",
   "身份适配 · 不共享数据库",
   "VeriTrail / 验迹",
   "JPyxis",
@@ -232,12 +240,14 @@ for (const marker of [
 
 const systemMap = fs.readFileSync(path.join(root, "docs/repository-system-map.md"), "utf8");
 for (const invariant of [
-  "十二个被映射的体系仓库",
+  "被映射的仓库不是一棵调用树",
+  "问题可以从第一层进入第二层，权力、状态、资格与完成结论不会自动跟过去",
   "AlgorithmResearchLab](https://github.com/NoctilumeDev/AlgorithmResearchLab)",
+  "Qingye / 青野](https://github.com/NoctilumeDev/Qingye)",
   "Qixu / 期序](https://github.com/NoctilumeDev/Qixu)",
+  "GuiHongMail / 归鸿](https://github.com/NoctilumeDev/GuiHongMail)",
   "该接缝不是 SSO",
-  "dome](https://github.com/NoctilumeDev/dome)",
-  "历史归档保留在体系图之外",
+  "`dome` 继续作为历史归档留在体系图之外",
   "JPyxis != VeriTrail Plugin",
   "FlowKernel != Agent Harness",
   "GitHub != Truth Oracle",
@@ -298,7 +308,7 @@ for (const invariant of [
 ]) {
   if (!readme.includes(invariant)) fail(`README.md: missing Drift Algorithm boundary ${invariant}`);
 }
-if (!readme.includes("explicitly not presented as implemented software")) {
+if (!readme.includes("现在是设计面，不是已实现产品")) {
   fail("README.md: PlainJournalPro planned boundary is missing");
 }
 if (readme.includes("/releases/tag/")) {
@@ -340,7 +350,7 @@ for (const invariant of [
   "## 局部最优，不等于全局最优",
   "每个局部动作都合理\n≠ 组合后的路径合法",
   "只读缩小了动作权限，不会自动取得语义正确性",
-  "## `dome` 已经给过一个真实的只读反例",
+  "## 青野已经给过一个真实的只读反例",
   "安全收束、任务可用性和语义正确性必须分账",
   "不是 AlgorithmResearchLab 已经完成的研究成果",
   "## 兜底也不是神谕",
