@@ -43,7 +43,7 @@ const mappedRepositories = [
 const mappedRepositoryCount = mappedRepositories.length + 1; // Includes this profile repository.
 const expectedInitialSource = "3fddab9d64401a93b6ec9be7175c5b0d2c3d9102";
 const expectedLatestSource = "3fe4b58d598eb66cd6210f0c280f6e7316f5f755";
-const expectedEditionRevision = "zh-profile-v1-r10";
+const expectedEditionRevision = "zh-profile-v1-r11";
 
 function fail(message) {
   failures.push(message);
@@ -153,7 +153,7 @@ for (const relative of requiredFiles.filter((file) => file.endsWith(".pdf"))) {
 const readme = fs.readFileSync(path.join(root, "README.md"), "utf8").replace(/\r\n/g, "\n");
 for (const editionMarker of [
   "**中文版本状态**",
-    "zh-profile-v1-r10",
+    "zh-profile-v1-r11",
   "2026-10-23",
   "https://github.com/NoctilumeDev/NoctilumeDev/tree/3fddab9d64401a93b6ec9be7175c5b0d2c3d9102",
     "https://github.com/NoctilumeDev/NoctilumeDev/tree/3fe4b58d598eb66cd6210f0c280f6e7316f5f755",
@@ -180,6 +180,38 @@ for (const heading of [
   "## Essays / 工程复盘与方法论",
 ]) {
   if (!readme.includes(heading)) fail(`README.md: missing stable profile section ${heading}`);
+}
+
+const journeyStart = readme.indexOf("<summary><strong>Project Journey / 展开项目沿革与时间说明</strong></summary>");
+const journeyEnd = journeyStart === -1 ? -1 : readme.indexOf("</details>", journeyStart);
+if (journeyStart === -1 || journeyEnd === -1) {
+  fail("README.md: missing bounded chronological Project Journey details");
+} else {
+  const chronologicalJourney = readme.slice(journeyStart, journeyEnd);
+  const timelineHeadings = [
+    "2026 年 3-4 月 · InkNarratives / 墨叙",
+    "2026 年 5-7 月 · DarkRoomLibrary / 暗室藏书",
+    "2026 年 7-8 月 · PlainJournal / 素简记",
+    "2026 年 8 月 · VeriTrail / 验迹",
+    "2026 年 8 月 · MiniSpringBoot",
+    "2026 年 9 月 · JPyxis",
+    "2026 年 9 月 · MiniLinux",
+    "2026 年 9 月 · FlowKernel / 流核",
+    "2026 年 10 月 · Qingye / 青野",
+    "2026 年 10 月 · Qixu / 期序",
+    "2026 年 10 月 · 漂移算法 / AlgorithmResearchLab",
+    "2026 年 10 月 · GuiHongMail / 归鸿",
+  ];
+  let previousIndex = -1;
+  for (const heading of timelineHeadings) {
+    const currentIndex = chronologicalJourney.indexOf(heading);
+    if (currentIndex === -1) {
+      fail(`README.md: missing chronological Project Journey entry ${heading}`);
+    } else if (currentIndex <= previousIndex) {
+      fail(`README.md: Project Journey is not chronological at ${heading}`);
+    }
+    previousIndex = currentIndex;
+  }
 }
 
 for (const invariant of [
