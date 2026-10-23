@@ -3,23 +3,73 @@
 > **中文版本状态**
 >
 > - 内容基线（G3A 拆分前的混合主页）：[`NoctilumeDev@3fddab9`](https://github.com/NoctilumeDev/NoctilumeDev/tree/3fddab9d64401a93b6ec9be7175c5b0d2c3d9102)
-> - 当前同步来源：[`NoctilumeDev@54c456f`](https://github.com/NoctilumeDev/NoctilumeDev/tree/54c456f592e5c1719f06e251525f5eb1dd82f8e8)
-> - Edition revision：`zh-profile-v1-r9`
-> - Source synchronized：`2026-10-10`
-> - Edition updated：`2026-10-10`
+> - 当前同步来源：[`NoctilumeDev@3fe4b58`](https://github.com/NoctilumeDev/NoctilumeDev/tree/3fe4b58d598eb66cd6210f0c280f6e7316f5f755)
+> - Edition revision：`zh-profile-v1-r10`
+> - Source synchronized：`2026-10-23`
+> - Edition updated：`2026-10-23`
 > - 当前英文主页：[English Edition](https://github.com/NoctilumeDev)
 >
 > 中文版是带来源坐标、独立修订的语言派生视图；允许晚于英文版更新，但不会把旧内容伪装成已经同步到新的英文 revision。
 
-AI-assisted solo engineer studying how unreliable code generation can enter reliable software systems without quietly acquiring authority.
+我现在是一名学生，也是一名在 AI 协助下独立构建软件的工程实践者。我一边完成真实业务系统，一边研究 AI 怎样进入这些系统，又不在不知不觉中取得本不属于它的权力。
 
-大模型可以很快写出代码，但“生成了代码”“测试出现绿灯”和“一个工程事实已经成立”不是同一件事。我的项目从五个单文件 HTML 开始，经过完整业务系统、微服务训练场和真实单机停止线，逐步把问题拆成四条责任边界不同的研究线。
+我目前的工作分成两个彼此连接、但保持独立的层次：业务系统拥有真实领域事实；研究实验室接住业务系统暴露出来的问题。问题可以跨过边界成为研究问题，权力和状态不会自动跟过去。
 
 *“Student” describes my current identity, not a project maturity level. 项目成熟度由证据、发布状态与明确边界分别说明。*
 
-**Start here / 快速入口：** [项目主线](#一张图看懂这些项目--project-journey) · [四条研究线](#四条研究线分别回答什么) · [工程方法](#solo-engineering-toolkit--单兵工程三剑客)
+**Start here / 快速入口：** [我现在是谁、现在在做什么](#我现在是谁现在在做什么) · [项目主线](#一张图看懂这些项目--project-journey) · [四条研究线](#四条研究线分别回答什么) · [工程方法](#solo-engineering-toolkit--单兵工程三剑客)
 
 > **认知支线：** AI 加速了认知变异，却不自动带来认知进步。真正决定结果的，是选择是否有效、失败能否被保留，以及谁拥有目标、证据、否决权与修改权。完整文章见 **[《AI 的上限，不在答案里》](docs/ai-cognitive-feedback-loop.md)**。
+
+## 我现在是谁、现在在做什么
+
+这里记录的是**当前快照**，不是永久身份，也不是不会变化的路线图。下面这些仓库的稳定角色可以相对持久，但随着项目闭合、分叉或暴露新问题，我正在做的事情会继续变化。它们也不是一张部署拓扑图，更不表示所有项目处于相同成熟度；精确里程碑、冻结基线、发布与当前任务仍由各项目仓库自己负责。
+
+### 业务与产品系统
+
+| 项目 | 当前稳定角色 |
+| --- | --- |
+| **[InkNarratives / 墨叙](https://github.com/NoctilumeDev/InkNarratives)** | 五个零依赖 HTML 作品，把构图、排版、动效与交互本身也作为叙事的一部分。 |
+| **[DarkRoomLibrary / 暗室藏书](https://github.com/NoctilumeDev/DarkRoomLibrary)** | 覆盖身份、流通、治理、采购、物流、交付与验收的完整图书馆业务系统，不是 CRUD 展示。 |
+| **[PlainJournal / 素简记](https://github.com/NoctilumeDev/PlainJournal)** | 分布式 B2C 电商训练场，用来处理服务所有权、Outbox、RocketMQ 恢复、幂等、多实例竞争、降级与真实验收。 |
+| **[PlainJournalPro / 素简记 Pro](https://github.com/NoctilumeDev/PlainJournalPro)** | 素简记面向多商户与跨机器问题的规划演进；现在是设计面，不是已实现产品。 |
+| **[Qingye / 青野](https://github.com/NoctilumeDev/Qingye)** | Spring Boot 与原生微信小程序校园系统，研究大模型怎样通过只读能力、范围确认、本地资格与业务方事实进入传统应用。 |
+| **[Qixu / 期序](https://github.com/NoctilumeDev/Qixu)** | 校园空间分配与使用权系统；资格、冻结志愿、最大参与人数、固定随机、候补与可解释性共同服务于公平目标，而不是把问题压成分数排名或先到先得。 |
+| **[GuiHongMail / 归鸿](https://github.com/NoctilumeDev/GuiHongMail)** | 真实 SMTP、当前单机的三服务邮箱：Go 拥有后端服务，Python 通过可替换算法合同接入，TypeScript 构建客户端；它探索多语言服务边界，但不冒充已经证明跨机分布式部署。 |
+
+### 研究与基础实验
+
+| 项目 | 当前稳定角色 |
+| --- | --- |
+| **[VeriTrail / 验迹](https://github.com/NoctilumeDev/VeriTrail)** | 证据资格与有界裁决：这次运行究竟证明了什么？ |
+| **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** | 计算与执行所有权：谁定义计算、谁发起调用、怎样让生命周期与失败可归属？ |
+| **[FlowKernel / 流核](https://github.com/NoctilumeDev/FlowKernel)** | 规划中的操作系统级研究线，关注 Capability、资源、撤销、恢复与 provenance；实现尚未开始。 |
+| **[漂移算法 / AlgorithmResearchLab](https://github.com/NoctilumeDev/AlgorithmResearchLab)** | 研究准备线：在目标与代理定义固定时，代理是否仍能在有界观测与反馈下支持原目标？研究尚未开始。 |
+| **[MiniLinux](https://github.com/NoctilumeDev/MiniLinux)** | 操作系统机制实验台，覆盖启动、内存、CPU、用户边界、文件、init、shell、实时实验与回放。 |
+| **[MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot)** | 框架机制重建，覆盖 IoC、AOP、Web/MVC、配置、JDBC、事务与启动，并用真实全栈路径反证纸面实现。 |
+
+业务系统与研究实验室可以交换问题，将来也可能交换带版本的制品；它们不会继承彼此的权力、状态、资格或完成结论。
+
+当前项目链接仍然指向实验室仓库。语言分仓不会自动授权发行路由；只有项目已经发布、具备可用中文版本、进入 Gallery catalog，并取得 `PROFILE_ROUTABLE`，默认入口才会切到 [Engineering Gallery](https://github.com/NoctilumeDev/EngineeringGallery)。
+
+## 一张图看懂这些项目 / Project Journey
+
+![从视觉实验、完整与分布式业务系统，到后续独立产品支线、单机边界，以及四条责任独立研究线的工程演化图](assets/project-journey.svg)
+
+<p align="center"><sub>实线表示问题演化；黄色虚线表示停止边界与经验回流。图中项目各自拥有状态，不是一条已经集成完成的调用链。<a href="assets/project-journey.svg">打开大图 / Open full-size diagram</a></sub></p>
+
+这不是事后编出来的产品矩阵，也不是一条单线时间轴：有些问题沿主线继续，有些从完整业务系统分叉成拥有独立事实边界的新系统。
+
+1. **[InkNarratives / 墨叙](https://github.com/NoctilumeDev/InkNarratives)** 保留五个零依赖 HTML，训练叙事、排版、交互与公开展示。
+2. **[DarkRoomLibrary / 暗室藏书](https://github.com/NoctilumeDev/DarkRoomLibrary)** 把页面推进成第一个完整业务系统，开始面对身份、角色、数据、协作、交付与验收闭环。
+3. **[PlainJournal / 素简记](https://github.com/NoctilumeDev/PlainJournal)** 成为分布式、可靠性、降级、多实例与真实验收的训练场；也正是在这里，16 GiB 单机容量和“不能把没证明的部分写成完成”成为硬边界。
+4. **[PlainJournalPro / 素简记 Pro](https://github.com/NoctilumeDev/PlainJournalPro)** 保存多商户、平台账本和跨机演进问题。当前资源不足以完成同强度验收，所以它只保留未来架构，不冒充已实现产品。
+5. **[Qingye / 青野](https://github.com/NoctilumeDev/Qingye)** 回到传统 Spring Boot 业务系统，并让大模型只通过有界、只读能力进入。自然语言反例说明：拿掉写权限可以缩小伤害半径，不能自动证明语义正确。
+6. **[Qixu / 期序](https://github.com/NoctilumeDev/Qixu)** 从暗室藏书暴露出的校园空间需求长成独立业务支线：暗室继续拥有账号与图书业务，期序独立拥有空间、资格、分配结果、使用权和处置事实。两者通过明确身份适配协作，不共享数据库，也不继承上游角色。
+7. **[GuiHongMail / 归鸿](https://github.com/NoctilumeDev/GuiHongMail)** 用真实 SMTP 邮箱检验另一种工程组合：三个拥有独立状态的 Go 服务、可替换的 Python 算法边界与 TypeScript 客户端，同时保留当前单机停止线。
+8. 业务系统暴露出不应继续由任何一个业务仓库独占的问题。证据资格成为 **[VeriTrail / 验迹](https://github.com/NoctilumeDev/VeriTrail)**；计算所有权成为 **[JPyxis](https://github.com/NoctilumeDev/JPyxis)**；系统能力与资源权成为 **[FlowKernel / 流核](https://github.com/NoctilumeDev/FlowKernel)**。
+9. 与此同时，**[AlgorithmResearchLab](https://github.com/NoctilumeDev/AlgorithmResearchLab)** 以“漂移算法”保存第四个问题：在目标与代理指标定义保持不变时，代理指标是否仍能在有界观测与反馈下支持既定目标的决策？研究尚未开始。目标替换、证明义务替换与推导缺口仍是当前范围之外的相邻候选，尚未被证明属于同一种机制。
+10. **[MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot)** 与 **[MiniLinux](https://github.com/NoctilumeDev/MiniLinux)** 继续作为机制实验台，加深框架与操作系统理解，不暗中替四条研究线授予实现事实。
 
 ## 哲学家的 KPI / The KPI Philosophers
 
@@ -42,26 +92,9 @@ AI-assisted solo engineer studying how unreliable code generation can enter reli
 
 > 精确里程碑、冻结基线与当前任务由各项目仓库的 README / Release 维护；本页只描述稳定的项目角色，避免复制状态后发生漂移。某个阶段的工程范围已经闭环，不一定等于作品在我心中已经停止生长。
 
-## 一张图看懂这些项目 / Project Journey
+## 四条研究线分别回答什么
 
-![从业务分叉与单机边界，经 dome 的有限只读收权实验，走向 VeriTrail、JPyxis、FlowKernel 与漂移算法四条研究线的工程演化图](assets/project-journey.svg)
-
-<p align="center"><sub>实线表示问题演化；黄色虚线表示停止边界与经验回流。图中项目各自拥有状态，不是一条已经集成完成的调用链。<a href="assets/project-journey.svg">打开大图 / Open full-size diagram</a></sub></p>
-
-这不是事后编出来的产品矩阵，也不是一条单线时间轴：有些问题沿主线继续，有些从完整业务系统分叉成拥有独立事实边界的新系统。
-
-1. **[InkNarratives / 墨叙](https://github.com/NoctilumeDev/InkNarratives)** 保留五个零依赖 HTML，训练叙事、排版、交互与公开展示。
-2. **[DarkRoomLibrary / 暗室藏书](https://github.com/NoctilumeDev/DarkRoomLibrary)** 把页面推进成第一个完整业务系统，开始面对角色、数据、协作和交付闭环。
-3. **[Qixu / 期序](https://github.com/NoctilumeDev/Qixu)** 从暗室藏书暴露出的校园空间需求长成独立业务支线：暗室继续拥有账号与图书业务，期序独立拥有空间、资格、分配结果、使用权和处置事实。两者通过明确身份适配协作，不共享数据库，也不继承上游角色。
-4. **[PlainJournal / 素简记](https://github.com/NoctilumeDev/PlainJournal)** 从另一条业务问题继续成为分布式、可靠性、降级、多实例与真实验收的训练场；也正是在这里，16 GiB 单机容量和“不能把没证明的部分写成完成”成为硬边界。
-5. **[PlainJournalPro / 素简记 Pro](https://github.com/NoctilumeDev/PlainJournalPro)** 保存多商户、平台账本和跨机演进问题。当前资源不足以完成同强度验收，所以它只保留未来架构，不冒充已实现产品。
-6. 这些停止线进一步暴露：AI 能协助生产代码，却不能凭自己的输出证明代码、测试、环境和发布事实。于是验收方法被抽成了独立的 **[VeriTrail / 验迹](https://github.com/NoctilumeDev/VeriTrail)**。
-7. 再往下追问“谁拥有执行权、谁拥有系统能力与资源权”，问题继续分成 **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** 与 **[FlowKernel / 流核](https://github.com/NoctilumeDev/FlowKernel)**。FlowKernel 的目标位置是面向不可信智能体的操作系统级信任与执行基座，当前计划以 C-first target 与 Linux reference lab 分别承载目标实验和对照实验，并非一个已经完成的跨平台“AI OS”。
-8. 与此同时，**[AlgorithmResearchLab](https://github.com/NoctilumeDev/AlgorithmResearchLab)** 以“漂移算法”保存了第四个问题：在目标与代理指标定义保持不变时，代理指标是否仍能在有界观测与反馈下支持既定目标的决策？研究尚未开始。目标替换、证明义务替换与推导缺口仍是当前范围之外的相邻候选，尚未被证明属于同一种机制。
-
-### 四条研究线分别回答什么
-
-#### 为什么需要四条研究线
+### 为什么需要四条研究线
 
 当 AI 接入系统以后，增、删、改、查不再只是四个普通的 API 动词。同一个请求可能沿着几条相互独立的轴发生偏离：目标与代理、授权与范围、计算与生命周期、证据与裁决。想证明 `A`，实际得到的可能是 `A'`；被授权的证明义务 `B` 可能被换成 `B'`；也可能在 `A -> B -> C` 中插入 `B'`，却没有证明它仍然保留原来的推导路径。这些是值得研究的问题形状，不是 AlgorithmResearchLab 已经取得的研究结论。
 
@@ -73,11 +106,11 @@ AI-assisted solo engineer studying how unreliable code generation can enter reli
 
 现在可以把应对方式收成三条：
 
-1. **收权 / Authority Minimization**：拿掉增、删、改，只允许有限查询或提出候选动作。[`dome`](https://github.com/NoctilumeDev/dome) 已经给出一个只读反例：它能降低直接副作用，却不能证明语义正确。
+1. **收权 / Authority Minimization**：拿掉增、删、改，只允许有限查询或提出候选动作。[青野](https://github.com/NoctilumeDev/Qingye) 已经给出一个只读反例：它能降低直接副作用，却不能证明语义正确。
 2. **有限放权 / Bounded Delegation**：只返回明确的 attempt 级 Capability。与其相信 Agent 对自己推理过程的说明，不如把冻结目标、明确动作、来源方观察、保留证据与独立资格外置成合同。
 3. **权责分离 / Responsibility Separation**：在有限放权的基础上继续拆开所有权。用户拥有目标与承诺，模型提出候选解释，Policy 决定是否授权，执行层只完成 sealed action，来源系统拥有事实，人处理剩余不确定性与风险；人的最终处置也不会因此成为世界真相。
 
-信息差不会消失。系统只能根据后果、可逆性与可观察性，选择缩小权限、请求澄清或停止；新证据可以改写下一轮计划，不能悄悄扩大当前 attempt。`dome` 为第一条提供了有限定义域内的证据；四条研究线分别保留第二、第三条所需的不同开放问题，并不构成一个已经集成完成的答案。
+信息差不会消失。系统只能根据后果、可逆性与可观察性，选择缩小权限、请求澄清或停止；新证据可以改写下一轮计划，不能悄悄扩大当前 attempt。青野为第一条提供了有限定义域内的证据；四条研究线分别保留第二、第三条所需的不同开放问题，并不构成一个已经集成完成的答案。
 
 ```text
 人的目标与授权
@@ -111,66 +144,13 @@ VeriTrail 本身是一个完整的小系统：单独用于本地 Web 项目、�
 
 这四条研究线也没有消灭素简记的问题。当前已经成立的边界仍从单机或单节点起步；一旦组合成更大的系统，资源容量、真实部署、恢复、跨机状态与验收成本会重新出现。于是素简记不只是早期项目，而是下一阶段基础设施必须持续回看的真实经验源。
 
-## Flagship Work
-
-- **[PlainJournal](https://github.com/NoctilumeDev/PlainJournal)** — 真实分布式业务与可靠性训练场，也是后续单机边界、Evidence 与运行问题的经验来源
-
-  [在线预览](https://noctilumedev.github.io/PlainJournal/) · [仓库](https://github.com/NoctilumeDev/PlainJournal)
-
-- **[VeriTrail](https://github.com/NoctilumeDev/VeriTrail)** — 把控制变量、不可变证据、真实浏览器观察和确定性裁决做成可独立使用的本地系统
-
-  [仓库与当前状态](https://github.com/NoctilumeDev/VeriTrail#当前状态)
-
-- **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** — 通过显式合同拆开 Control、definition frontend 与 runtime 的异构计算框架
-
-  [仓库与证据边界](https://github.com/NoctilumeDev/JPyxis#status)
-
-- **[FlowKernel](https://github.com/NoctilumeDev/FlowKernel)** — 面向不可信智能体的操作系统级信任与执行基座研究；策略可提案，确定性边界保留授权与落实权
-
-  [研究计划与当前边界](https://github.com/NoctilumeDev/FlowKernel)
-
-- **[漂移算法 / AlgorithmResearchLab](https://github.com/NoctilumeDev/AlgorithmResearchLab)** — 面向固定目标与固定代理定义下的代理有效性研究准备线；研究尚未开始，目标替换、义务替换与推导缺口仍是范围外候选
-
-## Selected Experiments
-
-- **[InkNarratives](https://github.com/NoctilumeDev/InkNarratives)** — 五个零依赖 HTML 作品与统一展厅；保留早期视觉、内容和交互实验
-
-  [在线展厅](https://noctilumedev.github.io/InkNarratives/)
-
-- **[DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary)** — 从页面走向完整 Spring Boot + Vue 业务闭环的第一块产品基线
-
-  [在线预览](https://noctilumedev.github.io/DarkRoomLibrary/) · [Release 证据](https://github.com/NoctilumeDev/DarkRoomLibrary/releases)
-
-- **[Qixu / 期序](https://github.com/NoctilumeDev/Qixu)** — 校园空间预约与使用权管理系统；把资格、志愿、冻结输入、可复验分配、候补、短约、活动场地与治理拆成明确状态和事实所有权
-
-  [仓库与当前边界](https://github.com/NoctilumeDev/Qixu#当前状态)
-
-- **[MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot)** — 从头拆解 IoC、AOP、Web/MVC、配置、JDBC、事务与启动机制，并用真实 React + MySQL 链路反证纸面实现
-
-  [架构与里程碑](https://github.com/NoctilumeDev/MiniSpringBoot#路线图)
-
-- **[MiniLinux](https://github.com/NoctilumeDev/MiniLinux)** — 从可启动 C 内核实验台逐步学习内存、CPU、用户边界与文件字节；当前不冒充 Linux 兼容实现
-
-  [实验台与路线图](https://github.com/NoctilumeDev/MiniLinux)
-
-These projects were developed through AI-assisted solo engineering. I own problem definition, architecture,
-acceptance contracts, failure analysis, release decisions and freeze boundaries; models and agents assist with
-implementation, review and repeatable execution. Public repository creation dates reflect publication or
-restructuring, not necessarily project inception.
-
 ## Repository System Map / 仓库关系图
 
 主页图表达的是**历史因果与经验反馈**，不是把仓库画成一条强依赖调用链。漂移算法研究固定目标与代理定义下的代理有效性；FlowKernel 未来以操作系统级信任语义约束系统能力、资源、撤销与恢复；JPyxis 管理异构计算合同与执行；Evidence Adapter 有界观察来源事实；VeriTrail 依据 sealed Plan 裁决现有 Evidence；Human 拥有目标、授权、前提、Seal 与最终处置；Reality 拥有真相。
 
 GitHub 只拥有并暴露其平台信任域内的状态，不是外部世界的真理证明；Review Attention 也不是 Verdict
-引擎。更完整的双层结构、十二个被映射工程仓库的角色、插件接缝与禁止越界见
+引擎。更完整的双层结构、被映射工程仓库的角色、插件接缝与禁止越界见
 **[Repository System Map / 仓库体系关系图](docs/repository-system-map.md)**。
-
-## Research / Planned
-
-- [PlainJournalPro](https://github.com/NoctilumeDev/PlainJournalPro) - reference architecture for a future multi-merchant evolution; explicitly not presented as implemented software.
-- [FlowKernel](https://github.com/NoctilumeDev/FlowKernel) - a planned OS-level trust and execution substrate for bounded agentic action, authority, lifecycle-aware resources and recovery; implementation has not started.
-- [AlgorithmResearchLab](https://github.com/NoctilumeDev/AlgorithmResearchLab) - prepared Drift Algorithm research line for proxy validity under fixed definitions; research has not started.
 
 <details>
 <summary><strong>Project Journey / 展开项目沿革与时间说明</strong></summary>
@@ -191,11 +171,19 @@ GitHub 只拥有并暴露其平台信任域内的状态，不是外部世界的�
 
   这里按问题来源放在暗室藏书之后，不表示它在时间上先于素简记。期序从暗室暴露出的校园空间需求长成独立系统：暗室拥有账号与图书业务，期序拥有空间、资格、预约、长期分配、使用权、活动场地与治理事实。真实暗室身份适配已经进入主线，但它不是 SSO，不继承暗室角色，也不直接修改对方数据库；精确里程碑与当前资格仍以[期序仓库](https://github.com/NoctilumeDev/Qixu#当前状态)为准。
 
+- **2026 年 10 月 · Qingye / 青野**
+
+  青野回到更传统的 Spring Boot + 原生微信小程序业务结构，再让大模型从有界只读入口进入校园社团、活动与共享设备事实。它最初施工于 `dome/qingye`，现在已经提炼为[独立权威仓库](https://github.com/NoctilumeDev/Qingye)；原实验坐标继续保留，后续产品写入只发生在独立仓。只读收权降低了直接副作用，却没有消灭自然语言目标、对象、时间与范围的语义问题。
+
 - **2026 年 7-8 月 · PlainJournal / 素简记**
 
   在暗室藏书收尾期间，我开始尝试微服务，并于 **2026-07-16** 建立 PlainJournal 的可运行基线。M0-M8 完成后，项目于 **2026-08-03** 首次公开。后来确认 M9+ 的多商户、平台账本和 Java/Go 异构协作无法在当前 16GB 单机上完成同等严格的真实验收，因此把它们独立为 PlainJournalPro，等扩容后继续。
 
   PlainJournal 不是不成熟的 Basic 版：M0-M8 在当时声明的运行条件下形成了业务、可靠性和验收的冻结参考基线；这不等于当前完整拓扑已重新取得同等级资格，当前运行状态仍以项目仓库为准。但我对当前前端视觉仍不满意，视觉重构尚未开始，所以从作品完成度看，它仍在继续打磨。
+
+- **2026 年 10 月 · GuiHongMail / 归鸿**
+
+  归鸿用真实 SMTP 邮箱尝试另一种多语言工程组合：三个 Go 服务分别拥有邮箱、SMTP 接入与投递生命周期，Python 只在需要算法时通过可替换合同进入，Vue 3 + TypeScript 构建客户端。当前成立的是单机三服务工程候选与限定证据，不把它扩写成已经证明的跨机分布式产品或公网邮件互通。
 
 - **2026 年 8 月 · VeriTrail / 验迹**
 
